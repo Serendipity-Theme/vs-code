@@ -1,0 +1,26 @@
+{
+    "name": "wicked-serendipity",
+    "displayName": "serendipity",
+    "description": "Serendipity",
+    "version": "0.0.1",
+    "publisher": "wicked-labs",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
+    },
+    "engines": {
+        "vscode": "^1.57.0"
+    },
+    "categories": [
+        "Themes"
+    ],
+    "contributes": {
+        "themes": [
+            {
+                "label": "Serendipity",
+                "uiTheme": "vs-dark",
+                "path": "./themes/Serendipity-color-theme.json"
+            }
+        ]
+    }
+}
