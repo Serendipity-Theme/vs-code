@@ -1,18 +1,34 @@
 {
-    "name": "wicked-serendipity",
+    "name": "wvsc-serendipity",
     "displayName": "serendipity",
-    "description": "Serendipity",
+    "description": "Serendipity, a VS Code theme by wickedlabs",
     "version": "0.0.1",
     "publisher": "wicked-labs",
     "repository": {
         "type": "git",
         "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
     },
+    "bugs": {
+        "url": "https://github.com/michael-andreuzza/Wicked-Betamax",
+        "email": "michael@andreuzza.com"
+    },
+    "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
+    "icon": "icons/theme-icon.png",
+    "galleryBanner": {
+        "color": "#6366F1",
+        "theme": "dark"
+    },
     "engines": {
         "vscode": "^1.57.0"
     },
     "categories": [
         "Themes"
+    ],
+    "keywords": [
+        "WVSC",
+        "serendipity",
+        "wickedtemplates",
+        "wickedblocks"
     ],
     "contributes": {
         "themes": [

@@ -1,14 +1,49 @@
-# README
-## This is the README for your extension "wicked-serendipity"
-You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+# WickedBetamax Theme for VS Code
+HTML
+![Preview](https://github.com/michael-andreuzza/Wicked-Betamax/blob/master/html.png?raw=true)
+CSS
+![Preview](https://github.com/michael-andreuzza/Wicked-Betamax/blob/master/css.png?raw=true)
+JS
+![Preview](https://github.com/michael-andreuzza/Wicked-Betamax/blob/master/js.png?raw=true)
 
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
 
-### For more information
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
-**Enjoy!**
-# wvsc-serendipity
+
+# Installation
+
+1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
+2. Search for `wvsc-serendipity`
+3. Click **Install** to install it.
+4. Code > Preferences > Color Theme > **wvsc-serendipity**
+5. Optional: Use the recommended settings below for best experience
+
+## Recommended Settings
+
+```js
+{
+  // This is are my personal prefferences
+  // Personally I use monospace, and it feels lovely.
+  "workbench.colorTheme": "wvsc-serendipity",
+  "editor.fontFamily": "'Jet Brains Mono' , Consolas, 'Courier New', monospace",
+  "editor.fontSize": 18,
+  "editor.lineHeight": 38,
+  "editor.letterSpacing": 0.5,
+  "files.trimTrailingWhitespace": true,
+  "editor.fontWeight": "400",
+  "prettier.eslintIntegration": true,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 5,
+  "editor.cursorBlinking": "phase",
+  "editor.renderWhitespace": "all",
+}
+```
+
+## Colours
+DarkGray: #22272E
+Indigo: #6366F1
+White: #ffffff
+
+
+## Feedback
+
+Anything you wonder just contact wickedlabs.dev on twitter. @wickedlabsHQ
