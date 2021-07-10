@@ -2,7 +2,7 @@
     "name": "wvsc-serendipity",
     "displayName": "serendipity",
     "description": "Serendipity, a VS Code theme by wickedlabs",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "publisher": "wicked-labs",
     "repository": {
         "type": "git",
