@@ -1,9 +1,9 @@
 # WickedBetamax Theme for VS Code
 HTML
-![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/codeHTML.png?token=AID7T6ENYFE2T72SWH4ZGP3A4YLFK)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/html.png?raw=true)
 
 JS
-![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/codeGulp.png?token=AID7T6BS7DZXILTDHBO6F6LA4YLIC)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/gulp.png?raw=true)
 
 
 
