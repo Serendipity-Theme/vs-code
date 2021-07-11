@@ -2,8 +2,11 @@
 HTML
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/html.png?raw=true)
 
+CSS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/css.png?raw=true)
+
 JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/gulp.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/js.png?raw=true)
 
 
 
