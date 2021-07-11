@@ -1,4 +1,4 @@
-# WickedSerendipity Theme for VS Code
+# Serendipity.
 HTML
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/html.png?raw=true)
 
@@ -40,10 +40,10 @@ JS
 ```
 
 ## Colours
-DarkGray: #232834
-Peppermint: #9EF0F0
-Cherry: #F06897
-Violeta: #BE95FF
+//I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb
+
+HTML
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/colors.png?raw=true)
 
 
 ## Feedback
