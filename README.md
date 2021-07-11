@@ -1,4 +1,4 @@
-# WickedBetamax Theme for VS Code
+# WickedSerendipity Theme for VS Code
 HTML
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/html.png?raw=true)
 
@@ -24,9 +24,8 @@ JS
 ```js
 {
   // This is are my personal prefferences
-  // Personally I use monospace, and it feels lovely.
   "workbench.colorTheme": "wvsc-serendipity",
-  "editor.fontFamily": "'Jet Brains Mono' , Consolas, 'Courier New', monospace",
+  "editor.fontFamily": "'IBM Plex Mono', monospace",
   "editor.fontSize": 18,
   "editor.lineHeight": 38,
   "editor.letterSpacing": 0.5,
