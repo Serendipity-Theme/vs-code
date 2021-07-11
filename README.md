@@ -42,10 +42,10 @@ JS
 ## Colours
 //I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb
 
-HTML
+
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/colors.png?raw=true)
 
 
 ## Feedback
 
-Anything you wonder just contact wickedlabs.dev on twitter. @wickedlabsHQ
+Anything you wonder just contact wickedlabs.dev on twitter. @wickedlabsHQ or @Mike_Andreuzza
