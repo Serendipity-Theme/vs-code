@@ -173,14 +173,14 @@
 		"gitDecoration.deletedResourceForeground": "#f27983b3",
 		"gitDecoration.untrackedResourceForeground": "#a6cc70b3",
 		"gitDecoration.ignoredResourceForeground": "#525a69",
-		"gitDecoration.conflictingResourceForeground": "",
+		"gitDecoration.conflictingResourceForeground": "#F06897",
 		"gitDecoration.submoduleResourceForeground": "#d4bfffb3",
 		"settings.headerForeground": "#cbccc6",
 		"settings.modifiedItemIndicator": "#77a8d9",
 		"terminal.background": "#1f2430",
 		"terminal.foreground": "#cbccc6",
 		"terminal.ansiBlack": "#191e2a",
-		"terminal.ansiRed": "#ed8274",
+		"terminal.ansiRed": "#F06897",
 		"terminal.ansiGreen": "#a6cc70",
 		"terminal.ansiYellow": "#fad07b",
 		"terminal.ansiBlue": "#6dcbfa",
@@ -188,7 +188,7 @@
 		"terminal.ansiCyan": "#90e1c6",
 		"terminal.ansiWhite": "#c7c7c7",
 		"terminal.ansiBrightBlack": "#686868",
-		"terminal.ansiBrightRed": "#f28779",
+		"terminal.ansiBrightRed": "#F06897",
 		"terminal.ansiBrightGreen": "#be95ff",
 		"terminal.ansiBrightYellow": "#9ef0f0",
 		"terminal.ansiBrightBlue": "#73d0ff",
@@ -199,7 +199,7 @@
 	"tokenColors": [
 		{
 			"settings": {
-				"background": "#1f2430",
+
 				"foreground": "#cbccc6"
 			}
 		},
@@ -555,7 +555,7 @@
 				"support.type.property-name"
 			],
 			"settings": {
-				"fontStyle": "normal",
+
 				"foreground": "#78a9ff"
 			}
 		},
