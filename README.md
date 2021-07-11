@@ -41,9 +41,10 @@ JS
 ```
 
 ## Colours
-DarkGray: #22272E
-Indigo: #6366F1
-White: #ffffff
+DarkGray: #232834
+Peppermint: #9EF0F0
+Cherry: #F06897
+Violeta: #BE95FF
 
 
 ## Feedback
