@@ -5,14 +5,14 @@ HTML
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkHtml.png?raw=true)
 
 CSS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkCss.png?raw=true)
+![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/darkCss.png)
 
 JS
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkJs.png?raw=true)
 
 ### Light Version
 HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightkhtml.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightHtml.png?raw=true)
 
 CSS
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightCss.png?raw=true)
