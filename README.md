@@ -2,7 +2,7 @@
 
 ### Dark Version
 HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkhtml.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkHtml.png?raw=true)
 
 CSS
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkCss.png?raw=true)
