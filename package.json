@@ -1,7 +1,7 @@
 {
     "name": "wvsc-serendipity",
     "displayName": "Serendipity",
-    "description": "Serendipity, a VS Code theme by wickedlabs",
+    "description": "Serendipity, perfect for retina displays.",
     "version": "0.12.0",
     "publisher": "wicked-labs",
     "repository": {
@@ -39,7 +39,7 @@
             },
             {
                 "label": "Serendipity Dark",
-                "uiTheme": "vs-dark",
+                "uiTheme": "vs",
                 "path": "./themes/serendipity-light.json"
             }
         ]
