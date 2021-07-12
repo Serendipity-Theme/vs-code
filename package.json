@@ -38,7 +38,7 @@
                 "path": "./themes/serendipity-dark.json"
             },
             {
-                "label": "Serendipity Dark",
+                "label": "Serendipity Light",
                 "uiTheme": "vs",
                 "path": "./themes/serendipity-light.json"
             }
