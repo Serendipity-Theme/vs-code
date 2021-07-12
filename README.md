@@ -1,12 +1,24 @@
 # Serendipity.
+
+### Dark Version
 HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/html.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkhtml.png?raw=true)
 
 CSS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/css.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkCss.png?raw=true)
 
 JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/js.png?raw=true)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkJs.png?raw=true)
+
+### Light Version
+HTML
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightkhtml.png?raw=true)
+
+CSS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightCss.png?raw=true)
+
+JS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightJs.png?raw=true)
 
 
 
@@ -40,12 +52,15 @@ JS
 ```
 
 ## Colours
-//I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb
+//I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb with dark and light version.
 
+### Dark Version
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkColors.png?raw=true)
 
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/colors.png?raw=true)
+### Light Version
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightColors.png?raw=true)
 
 
 ## Feedback
 
-Anything you wonder just contact wickedlabs.dev on twitter. @wickedlabsHQ or @Mike_Andreuzza
+Anything you wonder just contact @Mike_Andreuzza on twitter.
