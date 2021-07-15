@@ -1,27 +1,8 @@
 # Serendipity.
 
-### Dark Version
-HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkHtml.png?raw=true)
+### wvsc.dev
 
-CSS
-![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/darkCss.png)
-
-JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkJs.png?raw=true)
-
-### Light Version
-HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightHtml.png?raw=true)
-
-CSS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightCss.png?raw=true)
-
-JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightJs.png?raw=true)
-
-
-
+![Preview](https://wvsc.dev/images/ogtwitter.png)
 
 # Installation
 
@@ -52,15 +33,35 @@ JS
 ```
 
 ## Colours
-//I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb with dark and light version.
+I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb with dark and light version.
 
 ### Dark Version
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkColors.png?raw=true)
+### Dark Version
+HTML
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkHtml.png?raw=true)
+
+CSS
+![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/darkCss.png)
+
+JS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkJs.png?raw=true)
+
+
 
 ### Light Version
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightColors.png?raw=true)
 
+### Light Version
+HTML
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightHtml.png?raw=true)
+
+CSS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightCss.png?raw=true)
+
+JS
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightJs.png?raw=true)
 
 ## Feedback
 
-Anything you wonder just contact @Mike_Andreuzza on twitter.
+Anything you wonder just contact me, @Mike_Andreuzza on twitter.
