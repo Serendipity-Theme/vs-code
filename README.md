@@ -7,9 +7,9 @@
 # Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
-2. Search for `wvsc-serendipity`
+2. Search for **`serendipity`**
 3. Click **Install** to install it.
-4. Code > Preferences > Color Theme > **wvsc-serendipity**
+4. Code > Preferences > Color Theme > **serendipity-light or serendipity-dark**
 5. Optional: Use the recommended settings below for best experience
 
 ## Recommended Settings
@@ -17,7 +17,6 @@
 ```js
 {
   // This is are my personal prefferences
-  "workbench.colorTheme": "wvsc-serendipity",
   "editor.fontFamily": "'IBM Plex Mono', monospace",
   "editor.fontSize": 18,
   "editor.lineHeight": 38,
@@ -33,7 +32,7 @@
 ```
 
 ## Colours
-I have worked towards a palette that would feel fine on the eyes on retina screens and this color combination worked superb with dark and light version.
+I have worked towards a palette that would feel fine on the eyes when using a retina screens and this color combination worked superb with dark and light version.
 
 ### Dark Version
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkColors.png?raw=true)
