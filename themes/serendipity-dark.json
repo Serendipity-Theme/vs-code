@@ -218,6 +218,13 @@
       }
     },
     {
+      "name": "String",
+      "scope": ["string", "string.quoted.single"],
+      "settings": {
+        "foreground": "#ffe6b3"
+      }
+    },
+    {
       "name": "Regular Expressions and Escape Characters",
       "scope": ["string.regexp", "constant.character", "constant.other"],
       "settings": {
@@ -247,9 +254,18 @@
     },
     {
       "name": "Variable",
-      "scope": ["variable.other.property.js"],
+      "scope": [
+        "variable.other.property"],
       "settings": {
         "foreground": "#78a9ff"
+      }
+    },
+    {
+      "name": "Variable",
+      "scope": [
+        "meta.object-literal.key"],
+      "settings": {
+        "foreground": "#be95ff"
       }
     },
     {
@@ -290,7 +306,7 @@
     },
     {
       "name": "Separators like ; or ,",
-      "scope": ["punctuation.separator", "punctuation.terminator"],
+      "scope": ["punctuation.separator", "punctuation.terminator" ],
       "settings": {
         "foreground": "#cbccc6b3"
       }
@@ -322,7 +338,7 @@
     },
     {
       "name": "Inherited class type",
-      "scope": ["entity.other.inherited-class"],
+      "scope": ["entity.other.inherited-class" ],
       "settings": {
         "foreground": "#78a9ff"
       }
@@ -349,6 +365,7 @@
       }
     },
     {
+
       "name": "Function arguments",
       "scope": ["variable.parameter", "meta.parameter"],
       "settings": {
