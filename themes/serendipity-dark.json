@@ -221,7 +221,7 @@
       "name": "String",
       "scope": ["string", "string.quoted.single"],
       "settings": {
-        "foreground": "#ffe6b3"
+        "foreground": "#be95ff"
       }
     },
     {
@@ -263,9 +263,12 @@
     {
       "name": "Variable",
       "scope": [
-        "meta.object-literal.key"],
+        "meta.object-literal.key",
+        "keyword.control.import.tsx",
+        "meta.import.tsx"
+      ],
       "settings": {
-        "foreground": "#be95ff"
+        "foreground": "#78a9ff"
       }
     },
     {
@@ -287,7 +290,7 @@
       "name": "Storage",
       "scope": ["storage"],
       "settings": {
-        "foreground": "#be95ff"
+        "foreground": "#78a9ff"
       }
     },
     {
