@@ -248,7 +248,18 @@
     },
 	{
       "name": "Variable",
-      "scope": ["variable.other.property.js"],
+      "scope": ["variable.other.property"],
+      "settings": {
+        "foreground": "#4589ff"
+      }
+    },
+    {
+      "name": "Variable",
+      "scope": [
+        "meta.object-literal.key",
+        "keyword.control.import.tsx",
+        "meta.import.tsx"
+      ],
       "settings": {
         "foreground": "#4589ff"
       }
