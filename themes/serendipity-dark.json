@@ -94,10 +94,10 @@
     "editor.wordHighlightBorder": "#77a8d980",
     "editor.wordHighlightStrongBackground": "#a6cc7012",
     "editor.wordHighlightStrongBorder": "#a6cc7080",
-    "editor.findMatchBackground": "#ffffff0d",
-    "editor.findMatchBorder": "#ffffff80",
-    "editor.findMatchHighlightBackground": "#ffffff0d",
-    "editor.findMatchHighlightBorder": "#ffffff80",
+    "editor.findMatchBackground": "#a6cc700d",
+    "editor.findMatchBorder": "#a6cc7080",
+    "editor.findMatchHighlightBackground": "#a6cc700d",
+    "editor.findMatchHighlightBorder": "#a6cc7080",
     "editor.findRangeHighlightBackground": "#323a4c",
     "editor.findRangeHighlightBorder": "#1f243000",
     "editor.lineHighlightBackground": "#191e2a",
@@ -218,13 +218,6 @@
       }
     },
     {
-      "name": "String",
-      "scope": ["string", "string.quoted.single"],
-      "settings": {
-        "foreground": "#be95ff"
-      }
-    },
-    {
       "name": "Regular Expressions and Escape Characters",
       "scope": ["string.regexp", "constant.character", "constant.other"],
       "settings": {
@@ -253,25 +246,6 @@
       }
     },
     {
-      "name": "Variable",
-      "scope": [
-        "variable.other.property"],
-      "settings": {
-        "foreground": "#78a9ff"
-      }
-    },
-    {
-      "name": "Variable",
-      "scope": [
-        "meta.object-literal.key",
-        "keyword.control.import.tsx",
-        "meta.import.tsx"
-      ],
-      "settings": {
-        "foreground": "#78a9ff"
-      }
-    },
-    {
       "name": "Member Variable",
       "scope": ["variable.member"],
       "settings": {
@@ -290,7 +264,7 @@
       "name": "Storage",
       "scope": ["storage"],
       "settings": {
-        "foreground": "#78a9ff"
+        "foreground": "#be95ff"
       }
     },
     {
@@ -309,7 +283,7 @@
     },
     {
       "name": "Separators like ; or ,",
-      "scope": ["punctuation.separator", "punctuation.terminator" ],
+      "scope": ["punctuation.separator", "punctuation.terminator"],
       "settings": {
         "foreground": "#cbccc6b3"
       }
@@ -341,7 +315,7 @@
     },
     {
       "name": "Inherited class type",
-      "scope": ["entity.other.inherited-class" ],
+      "scope": ["entity.other.inherited-class"],
       "settings": {
         "foreground": "#78a9ff"
       }
@@ -368,7 +342,6 @@
       }
     },
     {
-
       "name": "Function arguments",
       "scope": ["variable.parameter", "meta.parameter"],
       "settings": {
