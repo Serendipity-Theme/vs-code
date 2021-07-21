@@ -94,10 +94,10 @@
     "editor.wordHighlightBorder": "#77a8d980",
     "editor.wordHighlightStrongBackground": "#a6cc7012",
     "editor.wordHighlightStrongBorder": "#a6cc7080",
-    "editor.findMatchBackground": "#a6cc700d",
-    "editor.findMatchBorder": "#a6cc7080",
-    "editor.findMatchHighlightBackground": "#a6cc700d",
-    "editor.findMatchHighlightBorder": "#a6cc7080",
+    "editor.findMatchBackground": "#ffffff0d",
+    "editor.findMatchBorder": "#ffffff80",
+    "editor.findMatchHighlightBackground": "#ffffff0d",
+    "editor.findMatchHighlightBorder": "#ffffff80",
     "editor.findRangeHighlightBackground": "#323a4c",
     "editor.findRangeHighlightBorder": "#1f243000",
     "editor.lineHighlightBackground": "#191e2a",
@@ -243,6 +243,13 @@
       "scope": ["variable"],
       "settings": {
         "foreground": "#cbccc6"
+      }
+    },
+    {
+      "name": "Variable",
+      "scope": ["variable.other.property.js"],
+      "settings": {
+        "foreground": "#78a9ff"
       }
     },
     {
