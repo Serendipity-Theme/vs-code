@@ -7,7 +7,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>Abdal Black Hackers 2</string>
+	<string>Serendipity Dark</string>
 	<key>settings</key>
 	<array>
 		<dict>
@@ -488,10 +488,12 @@
 	<key>semanticClass</key>
 	<string>theme.dark.abdal_black_hackers_2</string>
 	<key>author</key>
-	<string>Ebrahim Shafiei</string>
+	<string>Michael Andreuzza</string>
 	<key>comment</key>
-	<string>Only For Hackers
+	<string>Great for retina displays
 -------------------------
-Prof.Shafiei@Gmail.com</string>
+michael@andreuzza.com
+
+follow me on twitter @mike_andreuzza</string>
 </dict>
 </plist>
