@@ -48,7 +48,7 @@
                 "path": "./themes/serendipity-dark-italics.json"
             },
             {
-                "label": "Serendipity Light",
+                "label": "Serendipity Light Italics",
                 "uiTheme": "vs",
                 "path": "./themes/serendipity-light-italics.json"
             }
