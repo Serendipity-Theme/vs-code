@@ -9,7 +9,8 @@
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
 2. Search for **`serendipity`**
 3. Click **Install** to install it.
-4. Code > Preferences > Color Theme > **serendipity-light - serendipity-dark - serendipity-dark-italic **
+4. Code > Preferences > Color Theme >
+ **serendipity-light - serendipity - dark - serendipity-dark-italic - serendipity-light-italic**
 5. Optional: Use the recommended settings below for best experience
 
 ## Recommended Settings
