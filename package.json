@@ -58,7 +58,7 @@
                 "path": "./themes/serendipity-dark-low-contrast.json"
             },
             {
-                "label": "Serendipity Dark Low Contrast",
+                "label": "Serendipity Light Low Contrast",
                 "uiTheme": "vs",
                 "path": "./themes/serendipity-light-low-contrast.json"
             }
