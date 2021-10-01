@@ -1,0 +1,1 @@
+#fefefe,#73787f,#fafafa,#232834,#4187fe,#ffffff
