@@ -283,7 +283,7 @@
       "name": "String",
       "scope": ["string", "constant.other.symbol"],
       "settings": {
-        "foreground": "#000"
+        "foreground": "#be95ff"
       }
     },
     {
