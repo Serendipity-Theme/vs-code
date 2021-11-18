@@ -273,7 +273,7 @@
     },
     {
       "name": "Comment",
-      "scope": ["comment"],
+      "scope": ["comment","string.quoted.docstring.multi.python"],
       "settings": {
         "fontStyle": "italic",
         "foreground": "#5c6773"
@@ -283,7 +283,7 @@
       "name": "String",
       "scope": ["string", "constant.other.symbol"],
       "settings": {
-        "foreground": "#be95ff"
+        "foreground": "#000"
       }
     },
     {

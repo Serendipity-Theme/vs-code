@@ -1,6 +1,6 @@
 # Serendipity.
 
-### [wvsc](https://wvsc.dev) >>
+### [Serendipity Theme](https://serendipitytheme.com)
 
 ![Preview](https://wvsc.dev/images/ogtwitter.png)
 
@@ -34,6 +34,31 @@
 
 ## Colours
 I have worked towards a palette that would feel fine on the eyes when using a retina screens and this color combination worked superb with dark and light version.
+
+##Available Options
+- Dark
+- Dark Italics
+- Dark Low Contrast
+- Light
+- Light Italics
+- Light Low Contrast
+
+### Slack:
+- Dark
+- Light
+
+### Linear App:
+- Light
+- Dark
+
+### iTerm:
+- Light
+- Dark
+
+### Firefox:
+- Light
+- Dark
+
 
 ### Dark Version
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkColors.png?raw=true)
