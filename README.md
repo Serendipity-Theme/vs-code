@@ -17,13 +17,13 @@
 
 ```js
 {
-  // This is are my personal prefferences
+  // This is are my personal prefferences.
   "editor.fontFamily": "'IBM Plex Mono', monospace",
   "editor.fontSize": 18,
   "editor.lineHeight": 38,
   "editor.letterSpacing": 0.5,
   "files.trimTrailingWhitespace": true,
-  "editor.fontWeight": "400",
+  "editor.fontWeight": "normal",
   "prettier.eslintIntegration": true,
   "editor.cursorStyle": "line",
   "editor.cursorWidth": 5,
@@ -33,15 +33,19 @@
 ```
 
 ## Colours
-I have worked towards a palette that would feel fine on the eyes when using a retina screens and this color combination worked superb with dark and light version.
+I have worked towards a color palette that would feel fine on the eyes when using retina screens, this color combination made it possible, thanks to the pastel colors used on dark mode instead of "neonish".
 
-##Available Options
+## Available Options
 - Dark
 - Dark Italics
 - Dark Low Contrast
 - Light
 - Light Italics
 - Light Low Contrast
+
+## Jetbrains
+- Dark ( Only Text )
+- https://github.com/WickedLabs/serendipity
 
 ### Slack:
 - Dark
