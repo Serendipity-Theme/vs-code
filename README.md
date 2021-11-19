@@ -35,6 +35,8 @@
 ## Colours
 I have worked towards a color palette that would feel fine on the eyes when using retina screens, this color combination made it possible, thanks to the pastel colors used on dark mode instead of "neonish".
 
+The theme is available for editors, shells, UI's and more coming up.
+
 ## Available Options
 - Dark
 - Dark Italics
