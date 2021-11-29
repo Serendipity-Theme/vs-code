@@ -494,9 +494,7 @@
 		},
 		{
 			"name": "Entity name",
-			"scope": [
-				"entity.name"
-			],
+			"scope": ["entity.name", "storage.type.js", "keyword.control.import.tsx"],
 			"settings": {
 				"foreground": "#399ee6"
 			}
