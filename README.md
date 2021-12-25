@@ -2,7 +2,7 @@
 
 ### [Serendipity Theme](https://serendipitytheme.com)
 
-![Preview](https://wvsc.dev/images/ogtwitter.png)
+![Preview](https://serendipitytheme.com/images/ogtwitter.png)
 
 # Installation
 
@@ -93,6 +93,13 @@ CSS
 JS
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightJs.png?raw=true)
 
+## Checkout my othere Theme
+
+### [Sinequanone Theme Marketplace](https://marketplace.visualstudio.com/items?itemName=wicked-labs.wvsc-serendipity)
+![Preview](https://raw.githubusercontent.com/michael-andreuzza/sinequanone/master/cover.png)
+
+
+
 ## Feedback
 
-Anything you wonder just contact me, @Mike_Andreuzza on twitter.
+Anything you wonder just contact me,  [@Mike_Andreuzza](https://twitter.com/Mike_Andreuzza) on twitter.
