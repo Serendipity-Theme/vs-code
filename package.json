@@ -2,17 +2,17 @@
     "name": "wvsc-serendipity",
     "displayName": "Serendipity",
     "description": "Serendipity, adapted for retina displays.",
-    "version": "0.43.0",
+    "version": "0.43.0",    
     "publisher": "wicked-labs",
     "repository": {
         "type": "git",
-        "url": "https://github.com/michael-andreuzza/serendipity.git"
+        "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
     },
     "bugs": {
-        "url": "https://github.com/michael-andreuzza/serendipity.git",
+        "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git",
         "email": "michael@andreuzza.com"
     },
-    "homepage": "https://github.com/michael-andreuzza/serendipity",
+    "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
     "icon": "icons/theme-icon.png",
     "galleryBanner": {
         "color": "#232834",
