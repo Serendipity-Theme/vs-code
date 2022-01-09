@@ -2,7 +2,7 @@
     "name": "wvsc-serendipity",
     "displayName": "Serendipity",
     "description": "Serendipity, adapted for retina displays.",
-    "version": "0.43.0",    
+    "version": "0.50.0",
     "publisher": "wicked-labs",
     "repository": {
         "type": "git",
@@ -46,6 +46,11 @@
                 "label": "Serendipity Dark Italics",
                 "uiTheme": "vs-dark",
                 "path": "./themes/serendipity-dark-italics.json"
+            },
+             {
+                "label": "Serendipity Dark Italics High Contrast",
+                "uiTheme": "vs-dark",
+                "path": "./themes/serendipity-dark-italics-high-contrast.json"
             },
             {
                 "label": "Serendipity Light Italics",

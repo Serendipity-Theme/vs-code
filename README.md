@@ -41,6 +41,7 @@ The theme is available for editors, shells, UI's and more coming up.
 - Dark
 - Dark Italics
 - Dark Low Contrast
+- Dark Italics High Contrast
 - Light
 - Light Italics
 - Light Low Contrast
