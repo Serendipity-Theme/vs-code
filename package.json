@@ -15,7 +15,7 @@
     "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
     "icon": "icons/theme-icon.png",
     "galleryBanner": {
-        "color": "#232834",
+        "color": "#1e2431",
         "theme": "dark"
     },
     "engines": {

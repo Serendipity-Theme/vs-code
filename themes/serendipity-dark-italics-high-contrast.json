@@ -170,7 +170,7 @@
     "pickerGroup.foreground": "#525a69",
     "debugToolBar.background": "#0d0d0d",
     "walkThrough.embeddedEditorBackground": "#0d0d0d",
-    "gitDecoration.modifiedResourceForeground": "#77a8d9b3",
+    "gitDecoration.modifiedResourceForeground": "#78A9FF",
     "gitDecoration.deletedResourceForeground": "#f27983b3",
     "gitDecoration.untrackedResourceForeground": "#a6cc70b3",
     "gitDecoration.ignoredResourceForeground": "#525a69",
