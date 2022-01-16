@@ -178,7 +178,7 @@
     "gitDecoration.submoduleResourceForeground": "#d4bfffb3",
     "settings.headerForeground": "#f6f6f6",
     "settings.modifiedItemIndicator": "#77a8d9",
-   
+
     "terminal.background": "#1e2431",
     "terminal.foreground": "#f6f6f6",
     "terminal.ansiRed": "#be95ff",
@@ -189,8 +189,8 @@
     "terminal.ansiBrightYellow": "#fad07b",
     "terminal.ansiBlue": "#78A9FF",
     "terminal.ansiBrightBlue": "#8bb6ff",
-    "terminal.ansiMagenta": "#F06897",
-    "terminal.ansiBrightMagenta": "#f495b6",
+    "terminal.ansiMagenta": "#e879f9",
+    "terminal.ansiBrightMagenta": "#f0abfc",
     "terminal.ansiCyan": "#22d3ee",
     "terminal.ansiBrightCyan": "#67e8f9",
     "terminal.ansiBlack": "#1c1c1c",
