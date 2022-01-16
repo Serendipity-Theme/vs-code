@@ -2,7 +2,7 @@
     "name": "wvsc-serendipity",
     "displayName": "Serendipity",
     "description": "Serendipity, adapted for retina displays.",
-    "version": "0.61.1",
+    "version": "0.62.0",
     "publisher": "wicked-labs",
     "repository": {
         "type": "git",
