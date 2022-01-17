@@ -33,6 +33,11 @@
     "contributes": {
         "themes": [
             {
+                "label": "Serendipity Dark High Contrast",
+                "uiTheme": "vs-dark",
+                "path": "./themes/serendipity-dark-high-contrast.json"
+            },
+            {
                 "label": "Serendipity Dark",
                 "uiTheme": "vs-dark",
                 "path": "./themes/serendipity-dark.json"
