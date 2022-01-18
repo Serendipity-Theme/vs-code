@@ -169,9 +169,9 @@
 		"pickerGroup.foreground": "#c9cccf",
 		"debugToolBar.background": "#ffffff",
 		"walkThrough.embeddedEditorBackground": "#ffffff",
-		"gitDecoration.modifiedResourceForeground": "#709eccb3",
-		"gitDecoration.deletedResourceForeground": "#f27983b3",
-		"gitDecoration.untrackedResourceForeground": "#99bf4db3",
+		"gitDecoration.modifiedResourceForeground": "#4589ff",
+		"gitDecoration.deletedResourceForeground": "#f07171",
+		"gitDecoration.untrackedResourceForeground": "#4cbf99",
 		"gitDecoration.bignoredResourceForeground": "#c9cccf",
 		"gitDecoration.conflictingResourceForeground": "",
 		"gitDecoration.submoduleResourceForeground": "#a37accb3",
@@ -194,7 +194,7 @@
     "terminal.ansiBlack": "#1c1c1c",
     "terminal.ansiBrightBlack": "#6b7280",
     "terminal.ansiWhite": "#9ca3af",
-    "terminal.ansiBrightWhite": "#ffffff"
+    "terminal.ansiBrightWhite": "#b9bec7"
 	},
 	"tokenColors": [
 		{
