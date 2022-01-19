@@ -36,7 +36,7 @@
 
 ```js
 "editor.tokenColorCustomizations": {
-  "[Rosé Pine]": {
+  "[Serendipity]": {
     "textMateRules": [
       {
         "scope": [
