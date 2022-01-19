@@ -1,77 +1,52 @@
 {
-    "name": "wvsc-serendipity",
-    "displayName": "Serendipity",
-    "description": "Serendipity, adapted for retina displays.",
-    "version": "0.69.0",
-    "publisher": "wicked-labs",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
-    },
-    "bugs": {
-        "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git",
-        "email": "michael@andreuzza.com"
-    },
-    "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
-    "icon": "icons/theme-icon.png",
-    "galleryBanner": {
-        "color": "#f6f6f6",
-        "theme": "light"
-    },
-    "engines": {
-        "vscode": "^1.57.0"
-    },
-    "categories": [
-        "Themes"
-    ],
-    "keywords": [
-        "WVSC",
-        "serendipity",
-        "wicked",
-        "wickedblocks"
-    ],
-    "contributes": {
-        "themes": [
-            {
-                "label": "Serendipity Dark High Contrast",
-                "uiTheme": "vs-dark",
-                "path": "./themes/serendipity-dark-high-contrast.json"
-            },
-            {
-                "label": "Serendipity Dark",
-                "uiTheme": "vs-dark",
-                "path": "./themes/serendipity-dark.json"
-            },
-            {
-                "label": "Serendipity Light",
-                "uiTheme": "vs",
-                "path": "./themes/serendipity-light.json"
-            },
-            {
-                "label": "Serendipity Dark Italics",
-                "uiTheme": "vs-dark",
-                "path": "./themes/serendipity-dark-italics.json"
-            },
-            {
-                "label": "Serendipity Dark Italics High Contrast",
-                "uiTheme": "vs-dark",
-                "path": "./themes/serendipity-dark-italics-high-contrast.json"
-            },
-            {
-                "label": "Serendipity Light Italics",
-                "uiTheme": "vs",
-                "path": "./themes/serendipity-light-italics.json"
-            },
-            {
-                "label": "Serendipity Dark Low Contrast",
-                "uiTheme": "vs-dark",
-                "path": "./themes/serendipity-dark-low-contrast.json"
-            },
-            {
-                "label": "Serendipity Light Low Contrast",
-                "uiTheme": "vs",
-                "path": "./themes/serendipity-light-low-contrast.json"
-            }
-        ]
-    }
+  "name": "wvsc-serendipity",
+  "displayName": "Serendipity",
+  "description": "Serendipity, adapted for retina displays.",
+  "version": "0.69.0",
+  "publisher": "wicked-labs",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
+  },
+  "bugs": {
+    "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git",
+    "email": "michael@andreuzza.com"
+  },
+  "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
+  "icon": "icons/theme-icon.png",
+  "galleryBanner": {
+    "color": "#f6f6f6",
+    "theme": "light"
+  },
+  "engines": {
+    "vscode": "^1.57.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "keywords": [
+    "WVSC",
+    "serendipity",
+    "wicked",
+    "wickedblocks"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Serendipity  Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/serendipity-midnight.json"
+      },
+      {
+        "label": "Serendipity Sunset",
+        "uiTheme": "vs-dark",
+        "path": "./themes/serendipity-sunset.json"
+      },
+      {
+        "label": "Serendipity Morning",
+        "uiTheme": "vs-dark",
+        "path": "./themes/serendipity-morning.json"
+      }
+    ]
+  }
 }
