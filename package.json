@@ -32,10 +32,10 @@
   ],
   "contributes": {
     "themes": [
-      {
-        "label": "Serendipity Midnight",
-        "uiTheme": "vs-dark",
-        "path": "./themes/serendipity-midnight.json"
+       {
+        "label": "Serendipity Morning",
+        "uiTheme": "vs",
+        "path": "./themes/serendipity-morning.json"
       },
       {
         "label": "Serendipity Sunset",
@@ -43,10 +43,12 @@
         "path": "./themes/serendipity-sunset.json"
       },
       {
-        "label": "Serendipity Morning",
-        "uiTheme": "vs",
-        "path": "./themes/serendipity-morning.json"
+        "label": "Serendipity Midnight",
+        "uiTheme": "vs-dark",
+        "path": "./themes/serendipity-midnight.json"
       }
+
+
     ]
   }
 }
