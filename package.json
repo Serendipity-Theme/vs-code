@@ -2,7 +2,7 @@
   "name": "wvsc-serendipity",
   "displayName": "Serendipity",
   "description": "Serendipity, adapted for retina displays.",
-  "version": "0.72.0",
+  "version": "0.73.0",
   "publisher": "wicked-labs",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   ],
   "contributes": {
     "themes": [
-       {
+      {
         "label": "Serendipity Morning",
         "uiTheme": "vs",
         "path": "./themes/serendipity-morning.json"
@@ -47,8 +47,6 @@
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-midnight.json"
       }
-
-
     ]
   }
 }
