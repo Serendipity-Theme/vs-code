@@ -46,7 +46,12 @@
         "label": "Serendipity Morning",
         "uiTheme": "vs",
         "path": "./themes/serendipity-morning.json"
-      }
+      },
+      {
+        "label": "Serendipity Classic Light",
+        "uiTheme": "vs",
+        "path": "./themes/serendipity-classic-light.json"
+    }
     ]
   }
 }
