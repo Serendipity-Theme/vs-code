@@ -47,6 +47,7 @@
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-midnight.json"
       }
+
     ]
   }
 }
