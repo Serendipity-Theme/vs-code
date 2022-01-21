@@ -2,7 +2,7 @@
 
 ### [Serendipity Theme](https://serendipitytheme.com)
 
-![Preview](https://serendipitytheme.com/images/ogtwitter.png)
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/hero.png?raw=true)
 
 # Installation
 
@@ -63,59 +63,19 @@ I have worked towards a color palette that would feel fine on the eyes when usin
 The theme is available for editors, shells, UI's and more coming up.
 
 ## Available Options
-- Dark Morning
+- Light Morning
 - Dark Sunset
 - Dark Midnight
 
 
-## Jetbrains
-- Dark ( Only Text )
-- https://github.com/WickedLabs/serendipity
+### Midnight Version
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/midnight.png?raw=true)
+### Sunset Version
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/sunset.png?raw=true)
+## Morning Version
+![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/morning.png?raw=true)
 
-### Slack:
-- Dark
-- Light
-
-### Linear App:
-- Light
-- Dark
-
-### iTerm:
-- Light
-- Dark
-
-### Firefox:
-- Light
-- Dark
-
-
-### Dark Version
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkColors.png?raw=true)
-### Dark Version
-HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkHtml.png?raw=true)
-
-CSS
-![Preview](https://raw.githubusercontent.com/michael-andreuzza/wvsc-serendipity/master/darkCss.png)
-
-JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/darkJs.png?raw=true)
-
-
-
-### Light Version
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightColors.png?raw=true)
-
-### Light Version
-HTML
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightHtml.png?raw=true)
-
-CSS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightCss.png?raw=true)
-
-JS
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/lightJs.png?raw=true)
 
 ## Feedback
 
-Anything you wonder just contact me, @Mike_Andreuzza on twitter.
+Anything you wonder just contact me, [@Mike_Andreuzza](https://twitter.com/Mike_Andreuzza) on twitter.
