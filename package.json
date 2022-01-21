@@ -33,14 +33,14 @@
   "contributes": {
     "themes": [
       {
-        "label": "Serendipity Morning",
-        "uiTheme": "vs",
-        "path": "./themes/serendipity-morning.json"
-      },
-      {
         "label": "Serendipity Sunset",
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-sunset.json"
+      },
+      {
+        "label": "Serendipity Morning",
+        "uiTheme": "vs",
+        "path": "./themes/serendipity-morning.json"
       },
       {
         "label": "Serendipity Midnight",
