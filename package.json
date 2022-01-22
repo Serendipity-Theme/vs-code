@@ -6,13 +6,13 @@
   "publisher": "wicked-labs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git"
+    "url": "https://github.com/Serendipity-Theme/vs-code.git"
   },
   "bugs": {
-    "url": "https://github.com/michael-andreuzza/wvsc-serendipity.git",
+    "url": "https://github.com/Serendipity-Theme/vs-code.git",
     "email": "michael@andreuzza.com"
   },
-  "homepage": "https://github.com/michael-andreuzza/wvsc-serendipity",
+  "homepage": "https://serendipitytheme.com",
   "icon": "icons/theme-icon.png",
   "galleryBanner": {
     "color": "#f6f6f6",
