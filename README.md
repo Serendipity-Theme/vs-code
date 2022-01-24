@@ -1,4 +1,4 @@
-![Midnight](https://raw.githubusercontent.com/Serendipity-Theme/assets/main/githubHeader.png)
+![Midnight](https://serendipitytheme.com/images/ogTwitter.png)
 
 # Serendipity for VS Code.
 
@@ -32,11 +32,11 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 ![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/morning.png?raw=true)
 ## Italics
 
-## Personal Settings. 
+## Personal Settings.
 
 ```js
 {
-  
+
   "editor.fontFamily": "'IBM Plex Mono', monospace",
   "editor.fontSize": 18,
   "editor.lineHeight": 38,
@@ -51,7 +51,7 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 }
 ```
 
-All themes use italics for certain language tokens by default.  
+All themes use italics for certain language tokens by default.
 To **disable** italics for all themes, add this snippet to your `settings.json`:
   - quotes and *italic* strings (like in markdown) will be unaffected and still be italic
   - if you want to exclude one of the themes from this change, simply remove its name (along with the brackets `[]`) at the top of the snippet
@@ -139,4 +139,3 @@ To **disable** italics for all themes, add this snippet to your `settings.json`:
 
 Serendipity Theme created by [Micheal Andreuzza](https://github.com/michael-andreuzza).
 [Twitter](https://twitter.com/Mike_Andreuzza)
-
