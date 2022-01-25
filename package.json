@@ -1,5 +1,5 @@
 {
-  "name": "wvsc-serendipity",
+  "name": "serendipity",
   "displayName": "Serendipity",
   "description": "Serendipity, adapted for retina displays.",
   "version": "0.81.0",
@@ -15,7 +15,7 @@
   "homepage": "https://serendipitytheme.com",
   "icon": "icons/theme-icon.png",
   "galleryBanner": {
-    "color": "#f6f6f6",
+    "color": "#FDFDFE",
     "theme": "light"
   },
   "engines": {
@@ -25,10 +25,10 @@
     "Themes"
   ],
   "keywords": [
-    "WVSC",
+    "michael andreuzza",
     "serendipity",
-    "wicked",
-    "wickedblocks"
+    "light-theme",
+    "dark-theme"
   ],
   "contributes": {
     "themes": [
