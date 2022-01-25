@@ -58,7 +58,7 @@ To **disable** italics for all themes, add this snippet to your `settings.json`:
 
 ```jsonc
 "editor.tokenColorCustomizations": {
-  "[Serendipity Light][Serendipity Dark][Serendipity High Contrast]": {
+  "[Serendipity Morning][Serendipity Sunset][Serendipity Midnight]": {
     "textMateRules": [
       {
         "scope": [
