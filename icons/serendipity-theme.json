@@ -1,0 +1,24 @@
+{
+  "iconDefinitions": {
+    "_file": {
+      "iconPath": "./file.svg"
+    },
+    "_file-special": {
+      "iconPath": "./special-file.svg"
+    },
+    "_folder": {
+      "iconPath": "./folder.svg"
+    },
+    "_folder-open": {
+      "iconPath": "./open-folder.svg"
+    }
+  },
+  "file": "_file",
+  "fileNames": {
+    "_serendipity-theme.json": "_special-file"
+
+  },
+  "folder": "_folder",
+  "folderExpanded": "_open-folder",
+  "hidesExplorerArrows": true
+}

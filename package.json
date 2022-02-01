@@ -13,7 +13,7 @@
     "email": "michael@andreuzza.com"
   },
   "homepage": "https://serendipitytheme.com",
-  "icon": "icons/theme-icon.png",
+  "icon": "logo/theme-icon.png",
   "galleryBanner": {
     "color": "#FDFDFE",
     "theme": "light"
@@ -47,6 +47,13 @@
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-midnight.json"
       }
-    ]
+    ],
+		"iconThemes": [
+			{
+				"id": "serendipity-icons",
+				"label": "Serendipity Icons",
+				"path": "./icons/serendipity.json"
+			}
+		]
   }
 }
