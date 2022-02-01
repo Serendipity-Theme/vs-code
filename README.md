@@ -23,6 +23,10 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Dark Sunset
 - Dark Midnight
 
+## Icons
+A super simple set of four icons for file, folder, open folder and  special files.
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
+
 
 ### Midnight
 You have three themes, Midnight, Sunset and Morning and here the screenshots
