@@ -52,7 +52,7 @@
       {
         "id": "serendipity-icons",
         "label": "Serendipity Icons",
-        "path": "./icons/serendipity.json"
+        "path": "./icons/serendipity-theme.json"
       }
     ]
   }
