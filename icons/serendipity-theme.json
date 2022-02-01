@@ -10,7 +10,7 @@
       "iconPath": "./folder.svg"
     },
     "_folder-open": {
-      "iconPath": "./older-open.svg"
+      "iconPath": "./folder-open.svg"
     }
   },
   "file": "_file",
