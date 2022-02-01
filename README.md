@@ -24,13 +24,38 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Dark Midnight
 
 
-### Midnight Version
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/midnight.png?raw=true)
-### Sunset Version
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/sunset.png?raw=true)
-## Morning Version
-![Preview](https://github.com/michael-andreuzza/wvsc-serendipity/blob/master/morning.png?raw=true)
-## Italics
+### Midnight
+You have three themes, Midnight, Sunset and Morning and here the screenshots
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-css.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-gulp.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-html.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-javascript.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-markddown.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-python.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-tsx.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/midnight-screenshots/midnight-typescript.png?raw=true)
+
+### Sunset
+You have three themes, Midnight, Sunset and Morning and here the screenshots
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-css.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-gulp.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-html.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-javascript.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-markddown.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-python.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-tsx.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/sunset-screenshots/sunset-typescript.png?raw=true)
+
+
+### Morning
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-css.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-gulp.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-html.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-javascript.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-markddown.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-python.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-tsx.png?raw=true)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/old-serendipity/blob/master/morning-screenshots/morning-typescript.png?raw=true)
 
 ## Personal Settings.
 
