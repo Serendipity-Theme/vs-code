@@ -4,21 +4,21 @@
       "iconPath": "./file.svg"
     },
     "_file-special": {
-      "iconPath": "./special-file.svg"
+      "iconPath": "./file-special.svg"
     },
     "_folder": {
       "iconPath": "./folder.svg"
     },
     "_folder-open": {
-      "iconPath": "./open-folder.svg"
+      "iconPath": "./older-open.svg"
     }
   },
   "file": "_file",
   "fileNames": {
-    "_serendipity-theme.json": "_special-file"
+    "_serendipity-theme.json": "_file-special"
 
   },
   "folder": "_folder",
-  "folderExpanded": "_open-folder",
+  "folderExpanded": "_older-open",
   "hidesExplorerArrows": true
 }
