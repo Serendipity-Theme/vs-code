@@ -4,8 +4,9 @@
 
 # Official website
 -  [Serendipity](https://serendipitytheme.com)
-# Marketplace
--  [Marketplace](https://marketplace.visualstudio.com/items?itemName=wicked-labs.wvsc-serendipity)
+
+On the official website you fiwll fin the guidelines, color refference and a list of interefaces that Serendipity has been ported to.
+
 
 
 # Installation
@@ -24,7 +25,7 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Dark Midnight
 
 ## Icons
-A super simple set of four icons for file, folder, open folder and  special files.
+A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files. I will add more in the future.
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
 
 
