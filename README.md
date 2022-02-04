@@ -5,7 +5,7 @@
 # Official website
 -  [Serendipity](https://serendipitytheme.com)
 
-On the official website you fiwll fin the guidelines, color refference and a list of interefaces that Serendipity has been ported to.
+On the official website you will find guidelines, color refference, color pickers and a list of interefaces that Serendipity has been ported to.
 
 
 
