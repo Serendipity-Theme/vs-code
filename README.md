@@ -29,6 +29,8 @@ A super simple set of four super hyper mega cool icons for file, folder, open fo
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
 
 
+### Options
+You have three themes, Midnight, Sunset and Morning and here the screenshots
 ### Midnight
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-cpp.png?raw=true)
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-cs.png?raw=true)
@@ -42,7 +44,7 @@ A super simple set of four super hyper mega cool icons for file, folder, open fo
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-terminal.png?
 
 ### Sunset
-You have three themes, Midnight, Sunset and Morning and here the screenshots
+
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-cpp.png?raw=true)
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-cs.png?raw=true)
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-css.png?raw=true)
