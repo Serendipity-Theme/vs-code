@@ -41,7 +41,7 @@ You have three themes, Midnight, Sunset and Morning and here the screenshots
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-md.png?raw=true)
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-py.png?raw=true)
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-sh.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-terminal.png?
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-terminal.png?)
 
 ### Sunset
 
