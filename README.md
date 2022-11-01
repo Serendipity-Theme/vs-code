@@ -1,4 +1,4 @@
-![Midnight](https://serendipitytheme.com/images/ogTwitter.png)
+![Midnight](https://raw.githubusercontent.com/Serendipity-Theme/assets/main/githubHeader.png)
 
 # Serendipity for VS Code.
 
