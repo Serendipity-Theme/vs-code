@@ -3,7 +3,7 @@
 # Serendipity for VS Code.
 
 # Official website
--  [Serendipity](https://unwrapped.design/serendipity/)
+-  [Serendipity](https://store.michaelandreuzza.com/serendipity/)
 
 On the official website you will find guidelines, color refference, color pickers and a list of interefaces that Serendipity has been ported to.
 
