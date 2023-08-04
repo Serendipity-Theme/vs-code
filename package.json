@@ -2,7 +2,7 @@
   "name": "wvsc-serendipity",
   "displayName": "Serendipity",
   "description": "Elegant, minimal, and clean color palette to give your eyes rest on different interfaces.",
-  "version": "1.31.0",
+  "version": "1.32.0",
   "publisher": "wicked-labs",
   "repository": {
     "type": "git",
@@ -32,12 +32,12 @@
   ],
   "contributes": {
     "themes": [
-       {
+      {
         "label": "Serendipity Midnight Minimal",
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-midnight-electric.json"
       },
-       {
+      {
         "label": "Serendipity Sunset",
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-sunset.json"
