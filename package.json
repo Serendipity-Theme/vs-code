@@ -15,8 +15,8 @@
   "homepage": "https://serendipitytheme.com",
   "icon": "logo/theme-icon.png",
   "galleryBanner": {
-    "color": "#FDFDFE",
-    "theme": "light"
+    "color": "#202232",
+    "theme": "dark"
   },
   "engines": {
     "vscode": "^1.57.0"
