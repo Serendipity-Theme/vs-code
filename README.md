@@ -23,6 +23,7 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Light Morning
 - Dark Sunset
 - Dark Midnight
+- Dark Midnight Electric
 
 ## Icons
 A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files. I will add more in the future.

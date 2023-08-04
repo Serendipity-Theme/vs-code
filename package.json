@@ -32,7 +32,12 @@
   ],
   "contributes": {
     "themes": [
-      {
+       {
+        "label": "Serendipity Midnight Minimal",
+        "uiTheme": "vs-dark",
+        "path": "./themes/serendipity-midnight-electric.json"
+      },
+       {
         "label": "Serendipity Sunset",
         "uiTheme": "vs-dark",
         "path": "./themes/serendipity-sunset.json"
