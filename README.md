@@ -3,7 +3,8 @@
 # Serendipity for VS Code.
 
 # Official website
--  [Serendipity](https://michaelandreuzza.com/work/serendipity/)
+See other interfaces at the official website.
+-  [Serendipity](https://www.michaelandreuzza.com/vscode/serendipity/)
 
 On the official website you will find guidelines, color refference, color pickers and a list of interefaces that Serendipity has been ported to.
 
@@ -26,8 +27,8 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Dark Midnight Electric
 
 ## Icons
-A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files. I will add more in the future.
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
+A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files.
+![Serendipity icons](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
 
 
 ### Options
