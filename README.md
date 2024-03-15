@@ -6,10 +6,6 @@
 See other interfaces at the official website.
 -  [Serendipity](https://www.michaelandreuzza.com/vscode/serendipity/)
 
-On the official website you will find guidelines, color refference, color pickers and a list of interefaces that Serendipity has been ported to.
-
-
-
 # Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
