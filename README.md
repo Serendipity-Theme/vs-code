@@ -1,7 +1,10 @@
 ![Midnight](https://raw.githubusercontent.com/Serendipity-Theme/assets/main/githubHeader.png)
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/headerShot.png?raw=true)
 
-# Serendipity for VS Code.
-the color palette is designed to be easy on the eyes, with enough contrast to make individual elements distinguishable but not so bright as to be jarring in a darkened coding environment.
+
+
+# Serendipity for VS Code
+The color palette is designed to be easy on the eyes, with enough contrast to make individual elements distinguishable but not so bright as to be jarring in a darkened coding environment.
 
 
 
