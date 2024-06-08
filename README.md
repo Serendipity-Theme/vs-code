@@ -34,12 +34,12 @@ The theme is available for editors, shells, UI's and more coming up.
 
 Bonus only for VS code. This version is remixed version of the [original theme](https://marketplace.visualstudio.com/items?itemName=wicked-labs.old-serendipity) and adpated to Serendipity V2 colo scopes.
 
+#### Electric
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/electric.png?raw=true)
+
 ## Icons
 A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files.
 ![Serendipity icons](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
-
-#### Electric
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/electric.png?raw=true)
 
 
 ## Personal Settings.
