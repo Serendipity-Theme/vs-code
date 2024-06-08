@@ -25,11 +25,6 @@ The theme is available for editors, shells, UI's and more coming up. Checkout th
 - Dark Midnight
 - Dark Midnight Electric
 
-## Icons
-A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files.
-![Serendipity icons](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
-
-
 ### Options
 You have three themes, Midnight, Sunset and morning + one only for VS Code. The fontused on the screenshots is Operator Mono.
 #### Midnight
@@ -40,6 +35,10 @@ You have three themes, Midnight, Sunset and morning + one only for VS Code. The 
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/morning.png?raw=true)
 
 Bonus only for VS code. This version is remixed version of the [original theme](https://marketplace.visualstudio.com/items?itemName=wicked-labs.old-serendipity) and adpated to Serendipity V2 colo scopes.
+
+## Icons
+A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files.
+![Serendipity icons](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
 
 #### Electric
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/electric.png?raw=true)
