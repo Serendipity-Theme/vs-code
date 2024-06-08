@@ -17,16 +17,14 @@ See other interfaces at the official website.
 4. Code > Preferences > Color Theme >
  **Serendipity Midnight - Serendipity Sunset - Serendipity Morning**
 
-The theme is available for editors, shells, UI's and more coming up. Checkout the website
+The theme is available for editors, shells, UI's and more coming up.
 
 ## Available Options
 - Light Morning
 - Dark Sunset
 - Dark Midnight
-- Dark Midnight Electric
+- Dark  Electric
 
-### Options
-You have three themes, Midnight, Sunset and morning + one only for VS Code. The fontused on the screenshots is Operator Mono.
 #### Midnight
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/midnight.png?raw=true)
 #### Sunset
