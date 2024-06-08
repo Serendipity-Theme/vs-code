@@ -1,5 +1,4 @@
 ![Midnight](https://raw.githubusercontent.com/Serendipity-Theme/assets/main/githubHeader.png)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/headerShot.png?raw=true)
 
 
 
@@ -8,21 +7,21 @@ The color palette is designed to be easy on the eyes, with enough contrast to ma
 
 
 
-# Official website
+### Official website
 See other interfaces at the official website.
 -  [Serendipity](https://www.michaelandreuzza.com/vscode/serendipity/)
 
-# Installation
+### Installation
 
 1. Open **Extensions** sidebar panel in VS Code. `View → Extensions`
-2. Search for **`serendipity`**
+2. Search for **`Serendipity`**
 3. Click **Install** to install it.
 4. Code > Preferences > Color Theme >
- **Serendipity Midnight - Serendipity Sunset - Serendipity Morning**
+ **Serendipity Midnight - Serendipity Sunset - Serendipity Morning - Serendipity Electric**
 
 The theme is available for editors, shells, UI's and more coming up.
 
-## Available Options
+### Available Options
 - Light Morning
 - Dark Sunset
 - Dark Midnight
@@ -35,17 +34,18 @@ The theme is available for editors, shells, UI's and more coming up.
 #### Morning
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/morning.png?raw=true)
 
-Bonus only for VS code. This version is remixed version of the [original theme](https://marketplace.visualstudio.com/items?itemName=wicked-labs.old-serendipity) and adpated to Serendipity V2 colo scopes.
+
 
 #### Electric
+Only for VS code — This version is a remixed version of the [original theme](https://marketplace.visualstudio.com/items?itemName=wicked-labs.old-serendipity) is and adpated version to Serendipity V2 and using V1 color scopes.
 ![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/electric.png?raw=true)
 
-## Icons
+### Icons
 A super simple set of four super hyper mega cool icons for file, folder, open folder and  special files.
 ![Serendipity icons](https://github.com/Serendipity-Theme/serendipity/blob/master/icons/icons.png?raw=true)
 
 
-## Personal Settings.
+### Personal Settings.
 
 ```js
 {
