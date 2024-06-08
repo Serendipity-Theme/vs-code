@@ -31,51 +31,26 @@ A super simple set of four super hyper mega cool icons for file, folder, open fo
 
 
 ### Options
-You have three themes, Midnight, Sunset and Morning and here the screenshots
-### Midnight
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-cpp.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-cs.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-css.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-html.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-java.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-js.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-md.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-py.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-sh.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/midnight-screenshots/midnight-terminal.png?)
+You have three themes, Midnight, Sunset and morning + one only for VS Code. The fontused on the screenshots is Operator Mono.
+#### Midnight
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/midnight.png?raw=true)
+#### Sunset
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/sunset.png?raw=true)
+#### Morning
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/morning.png?raw=true)
 
-### Sunset
+Bonus only for VS code. This version is remixed version of the [original theme](https://marketplace.visualstudio.com/items?itemName=wicked-labs.old-serendipity) and adpated to Serendipity V2 colo scopes.
 
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-cpp.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-cs.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-css.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-html.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-java.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-js.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-md.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-py.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-sh.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/sunset-screenshots/sunset-terminal.png?raw=true)
+#### Electric
+![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/images/electric.png?raw=true)
 
-
-### Morning
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-cpp.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-cs.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-css.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-html.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-java.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-js.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-md.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-py.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-sh.png?raw=true)
-![VS Code Marketplace](https://github.com/Serendipity-Theme/serendipity/blob/master/morning-screenshots/morning-terminal.png?raw=true)
 
 ## Personal Settings.
 
 ```js
 {
 
-  "editor.fontFamily": "'IBM Plex Mono', monospace",
+  "editor.fontFamily": "'Operator Mono', monospace",
   "editor.fontSize": 18,
   "editor.lineHeight": 38,
   "editor.letterSpacing": 0.5,
