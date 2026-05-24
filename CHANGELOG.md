@@ -4,7 +4,7 @@ All notable changes to the "wicked-serendipity" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
-## [1.66.2] - 2026-05-24
+## [1.67.0] - 2026-05-24
 
 ### Changed
 

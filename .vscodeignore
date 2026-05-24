@@ -1,4 +1,6 @@
 .vscode/**
 .vscode-test/**
+.vscode-debug/**
+scripts/**
 .gitignore
 vsc-extension-quickstart.md
