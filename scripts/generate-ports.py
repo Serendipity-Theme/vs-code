@@ -39,7 +39,7 @@ VARIANTS = {
 
 HEADER = "https://raw.githubusercontent.com/Serendipity-Theme/assets/main/githubHeader.png"
 SITE = "https://www.michaelandreuzza.com/vscode/serendipity/"
-CREDIT = "Serendipity Theme created and ported by [Micheal Andreuzza](https://github.com/michael-andreuzza)."
+CREDIT = "[Micheal Andreuzza](https://github.com/michael-andreuzza)"
 
 ANSI_MAP = [
     ("ansiBlack", 0),
@@ -182,7 +182,7 @@ See other interfaces at the [official website]({SITE}).
 
 {extra}
 
-## Who ported the theme?
+## Created by
 
 {CREDIT}
 """
@@ -673,24 +673,30 @@ def main():
 
 # Serendipity Color Palette
 
-Canonical semantic tokens for all Serendipity theme ports.
+Colors for all theme variants in many different formats.
 
 ## Files
 
-- **`tokens.json`** — UI, terminal, syntax, and git tokens for **Midnight**, **Sunset**, and **Morning**
-- `palette.css`, `palettes.scss`, `tailwind.config.js` — raw color values (legacy)
+- **`tokens.json`** — canonical UI, terminal, syntax, and git tokens for **Midnight**, **Sunset**, and **Morning**
+- `palette.css`, `palettes.scss`, `tailwind.config.js` — raw color values for CSS and Tailwind
 
-## Usage
+Use `tokens.json` for app ports, or the CSS/SCSS/Tailwind files for web projects.
 
-Import `tokens.json` when building new ports so colors stay in sync with [vs-code](https://github.com/Serendipity-Theme/vs-code).
+If you need the colors in a different format, open an issue on GitHub.
 
-Regenerate from VS Code themes:
+## Regenerate tokens
+
+From the [vs-code](https://github.com/Serendipity-Theme/vs-code) repository:
 
 ```bash
-python3 vs-code/scripts/generate-ports.py
+python3 scripts/generate-ports.py
 ```
 
-See the [official website]({SITE}) for all available interfaces.
+## Check out the palette
+
+![Serendipity Palette](https://user-images.githubusercontent.com/18015147/150700800-0f991263-ad9f-4246-9575-ba74dd95d9ff.png)
+
+See all available interfaces at the [official website]({SITE}).
 """,
     )
 
@@ -717,7 +723,7 @@ See other interfaces at the [official website]({SITE}).
 
 {{INSTALL_INSTRUCTIONS}}
 
-## Who ported the theme?
+## Created by
 
 {CREDIT}
 
