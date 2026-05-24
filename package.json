@@ -2,7 +2,7 @@
   "name": "wvsc-serendipity",
   "displayName": "Serendipity",
   "description": "Elegant, minimal, and clean color palette to give your eyes rest on different interfaces.",
-  "version": "1.66.1",
+  "version": "1.66.2",
   "publisher": "wicked-labs",
   "repository": {
     "type": "git",
@@ -21,6 +21,10 @@
   "engines": {
     "vscode": "^1.57.0"
   },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
   "categories": [
     "Themes"
   ],

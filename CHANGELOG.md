@@ -4,6 +4,16 @@ All notable changes to the "wicked-serendipity" extension will be documented in 
 
 Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
 
+## [1.66.2] - 2026-05-24
+
+### Changed
+
+- Bump Morning light theme colors for richer accents and stronger contrast on light backgrounds.
+
+### Added
+
+- Per-theme debug launch configurations for extension development.
+
 ## [1.66.1] - 2026-05-24
 
 ### Fixed

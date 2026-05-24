@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "serendipity: debug Morning",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/set-debug-theme.js",
+        "Serendipity Morning"
+      ]
+    },
+    {
+      "label": "serendipity: debug Midnight",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/set-debug-theme.js",
+        "Serendipity Midnight"
+      ]
+    },
+    {
+      "label": "serendipity: debug Sunset",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/set-debug-theme.js",
+        "Serendipity Sunset"
+      ]
+    },
+    {
+      "label": "serendipity: debug Midnight Electric",
+      "type": "process",
+      "command": "node",
+      "args": [
+        "${workspaceFolder}/scripts/set-debug-theme.js",
+        "Serendipity Midnight Electric"
+      ]
+    }
+  ]
+}

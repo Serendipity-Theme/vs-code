@@ -1,17 +1,77 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
-    "version": "0.2.0",
-    "configurations": [
-        {
-            "type": "extensionHost",
-            "request": "launch",
-            "name": "Launch Extension",
-            // "runtimeExecutable": "${execPath}",
-            "args": [
-                "--extensionDevelopmentPath=${workspaceFolder}"
-            ],
-        },
-    ]
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Extension (Morning)",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "preLaunchTask": "serendipity: debug Morning",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--user-data-dir=${workspaceFolder}/.vscode-debug/user-data"
+      ],
+      "env": {
+        "SERENDIPITY_DEBUG_THEME": "Serendipity Morning"
+      },
+      "settings": {
+        "window.autoDetectColorScheme": false,
+        "workbench.colorTheme": "Serendipity Morning"
+      }
+    },
+    {
+      "name": "Extension (Midnight)",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "preLaunchTask": "serendipity: debug Midnight",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--user-data-dir=${workspaceFolder}/.vscode-debug/user-data"
+      ],
+      "env": {
+        "SERENDIPITY_DEBUG_THEME": "Serendipity Midnight"
+      },
+      "settings": {
+        "window.autoDetectColorScheme": false,
+        "workbench.colorTheme": "Serendipity Midnight"
+      }
+    },
+    {
+      "name": "Extension (Sunset)",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "preLaunchTask": "serendipity: debug Sunset",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--user-data-dir=${workspaceFolder}/.vscode-debug/user-data"
+      ],
+      "env": {
+        "SERENDIPITY_DEBUG_THEME": "Serendipity Sunset"
+      },
+      "settings": {
+        "window.autoDetectColorScheme": false,
+        "workbench.colorTheme": "Serendipity Sunset"
+      }
+    },
+    {
+      "name": "Extension (Midnight Electric)",
+      "type": "extensionHost",
+      "request": "launch",
+      "runtimeExecutable": "${execPath}",
+      "preLaunchTask": "serendipity: debug Midnight Electric",
+      "args": [
+        "--extensionDevelopmentPath=${workspaceFolder}",
+        "--user-data-dir=${workspaceFolder}/.vscode-debug/user-data"
+      ],
+      "env": {
+        "SERENDIPITY_DEBUG_THEME": "Serendipity Midnight Electric"
+      },
+      "settings": {
+        "window.autoDetectColorScheme": false,
+        "workbench.colorTheme": "Serendipity Midnight Electric"
+      }
+    }
+  ]
 }
