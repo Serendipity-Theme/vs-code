@@ -1,0 +1,28 @@
+name: Publish to Open VSX
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install tooling
+        run: npm install -g @vscode/vsce ovsx
+
+      - name: Package extension
+        run: vsce package --no-dependencies --allow-missing-repository
+
+      - name: Publish to Open VSX
+        env:
+          OVSX_PAT: ${{ secrets.OVSX_PAT }}
+        run: ovsx publish *.vsix -p "$OVSX_PAT"
