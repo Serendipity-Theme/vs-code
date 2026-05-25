@@ -657,6 +657,22 @@ Bump `version` in `manifest.json`, add the new version to `versions.json`, commi
 """
 
 
+def obsidian_preview_section(*, brand: str, dark_name: str, light_name: str) -> str:
+    if brand == "Sequoia":
+        return f"""## Preview
+
+| {dark_name} | {light_name} |
+| --- | --- |
+| ![{dark_name}](screenshot.png) | ![{light_name}](screenshot-light.png) |
+
+"""
+    return f"""## Preview
+
+![{dark_name}](screenshot.png)
+
+"""
+
+
 def obsidian_port_readme(
     *,
     brand: str,
@@ -705,7 +721,7 @@ Elegant, minimal, and clean color palette for your tools.
 
 See other interfaces at the [official website]({WEBSITE}).
 
-## Available themes
+{obsidian_preview_section(brand=brand, dark_name=dark_name, light_name=light_name)}## Available themes
 
 {variants}
 
