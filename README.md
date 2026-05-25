@@ -150,5 +150,5 @@ To **disable** italics for all themes, add this snippet to your `settings.json`:
 ```
 
 
-Serendipity Theme created by [Micheal Andreuzza](https://github.com/michael-andreuzza).
+By [Micheal Andreuzza](https://michaelandreuzza.com/) at [Lexington Themes](https://lexingtonthemes.com/)
 [Twitter](https://twitter.com/Mike_Andreuzza)
