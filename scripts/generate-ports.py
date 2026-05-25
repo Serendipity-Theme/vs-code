@@ -1666,6 +1666,82 @@ jobs:
 """
 
 
+def jetbrains_screenshot_path(scheme_name: str) -> str:
+    return f"screenshots/{scheme_name.lower().replace(' ', '-')}.png"
+
+
+def jetbrains_preview_section(scheme_names: list[str]) -> str:
+    if len(scheme_names) <= 3:
+        header = " | ".join(scheme_names)
+        div = " | ".join("---" for _ in scheme_names)
+        imgs = " | ".join(f"![{name}]({jetbrains_screenshot_path(name)})" for name in scheme_names)
+        return f"| {header} |\n| {div} |\n| {imgs} |\n"
+    blocks = []
+    for i in range(0, len(scheme_names), 2):
+        pair = scheme_names[i : i + 2]
+        if len(pair) == 2:
+            left, right = pair
+            blocks.append(
+                f"| {left} | {right} |\n| --- | --- |\n"
+                f"| ![{left}]({jetbrains_screenshot_path(left)}) | ![{right}]({jetbrains_screenshot_path(right)}) |"
+            )
+        else:
+            name = pair[0]
+            blocks.append(f"| {name} |\n| --- |\n| ![{name}]({jetbrains_screenshot_path(name)}) |")
+    return "\n\n".join(blocks) + "\n"
+
+
+def jetbrains_variants_md(brand: str) -> str:
+    if brand == "Serendipity":
+        return "\n".join(
+            f"- **{name}** — {appearance}"
+            for name, appearance in [
+                ("Midnight", "dark"),
+                ("Morning", "light"),
+                ("Sunset", "dark"),
+            ]
+        )
+    return "\n".join(
+        f"- **{name}** — {appearance}"
+        for name, appearance in [
+            ("Moonlight Dark", "dark"),
+            ("Moonlight Light", "light"),
+            ("Monochrome Dark", "dark"),
+            ("Monochrome Light", "light"),
+            ("Retro Dark", "dark"),
+            ("Retro Light", "light"),
+        ]
+    )
+
+
+def jetbrains_port_readme(*, brand: str, scheme_names: list[str]) -> str:
+    return f"""![{brand}]({HEADER})
+
+# {brand} for JetBrains
+
+Elegant, minimal, and clean color palette for your tools.
+
+See other interfaces at the [official website]({WEBSITE}).
+
+## Preview
+
+{jetbrains_preview_section(scheme_names)}
+## Available themes
+
+{jetbrains_variants_md(brand)}
+
+## Installation
+
+Install from JetBrains Marketplace (see `MARKETPLACE.md`) or import `.icls` files manually (see `INSTALL.md`).
+
+See `MARKETPLACE.md` for publishing and release steps.
+
+## Created by
+
+[Micheal Andreuzza](https://github.com/michael-andreuzza)
+"""
+
+
 def jetbrains_marketplace_md(*, brand: str, plugin_name: str, github: str, scheme_names: list[str]) -> str:
     screenshot_lines = "\n".join(
         f"- `{name}` → `screenshots/{name.lower().replace(' ', '-')}.png`"
@@ -1679,7 +1755,7 @@ This repository includes a ready-to-build IntelliJ Platform plugin with bundled 
 
 - Gradle plugin project (build with `./gradlew buildPlugin`)
 - Bundled schemes: {", ".join(scheme_names)}
-- Marketplace screenshots in `screenshots/` (1280×800 previews)
+- Marketplace screenshots in `screenshots/` (1280×800 IDE captures)
 - GitHub Actions workflow that uploads a `.zip` artifact on every push to `main`
 
 ## You do not need a JetBrains IDE locally
@@ -1687,7 +1763,7 @@ This repository includes a ready-to-build IntelliJ Platform plugin with bundled 
 1. Push this repo (or download the **plugin-distribution** artifact from the latest GitHub Actions run).
 2. Unzip the artifact — it is the file you upload to Marketplace.
 
-Screenshots in `screenshots/` are generated previews showing each scheme's syntax colors. You can replace them later with real IDE captures if you install IntelliJ.
+Screenshots in `screenshots/` are real IDE captures used for the Marketplace listing and README preview.
 
 ## Create a JetBrains account (one time)
 
@@ -1809,8 +1885,10 @@ def generate_jetbrains_plugin(
         write(color_path, jetbrains_icls(tok, scheme_name))
 
         shot_name = f"screenshots/{scheme_name.lower().replace(' ', '-')}.png"
+        shot_path = port_dir / shot_name
         files.append(shot_name)
-        jetbrains_screenshot_png(tok, scheme_name, port_dir / shot_name)
+        if not shot_path.exists():
+            jetbrains_screenshot_png(tok, scheme_name, shot_path)
 
     write(port_dir / "src/main/resources/META-INF/plugin.xml", jetbrains_plugin_xml(
         scheme_names,
@@ -1853,6 +1931,8 @@ See `MARKETPLACE.md` for upload steps and GitHub Actions build artifacts.
 
 These `.icls` files are the same schemes bundled in the plugin.
 """)
+    write(port_dir / "README.md", jetbrains_port_readme(brand=brand, scheme_names=scheme_names))
+    files.append("README.md")
 
     plugin_files = [
         "build.gradle.kts",
@@ -2136,12 +2216,7 @@ Copy a theme folder into Spicetify's Themes directory and apply with `spicetify 
         root_name="serendipity-jetbrains",
         scheme_name_fn=jetbrains_scheme_name,
     )
-    write_port(
-        "jetbrains",
-        "Install from JetBrains Marketplace (see `MARKETPLACE.md`) or import `.icls` files manually (see `INSTALL.md`).",
-        "Serendipity for JetBrains",
-        jetbrains_files,
-    )
+    write(PROJECTS / "jetbrains" / "LICENSE", LICENSE + "\n")
 
     figma_files = []
     for vid, tok in all_tokens.items():
