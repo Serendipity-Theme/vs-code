@@ -14,7 +14,8 @@ fi
 
 ovsx create-namespace "$OVSX_NAMESPACE" -p "$OVSX_PAT" 2>/dev/null || true
 
-cp package.json package.json.marketplace
+BACKUP="$(mktemp)"
+cp package.json "$BACKUP"
 node -e "
 const fs = require('fs');
 const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
@@ -23,8 +24,9 @@ fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2) + '\n');
 " "$OVSX_NAMESPACE"
 
 vsce package --no-dependencies --allow-missing-repository
-ovsx publish *.vsix -p "$OVSX_PAT"
-mv package.json.marketplace package.json
-rm -f *.vsix
+VSIX="$(ls -1 *.vsix | head -1)"
+ovsx publish "$VSIX" -p "$OVSX_PAT"
+cp "$BACKUP" package.json
+rm -f "$BACKUP" *.vsix
 
 echo "Published: https://open-vsx.org/extension/${OVSX_NAMESPACE}/wvsc-serendipity"

@@ -2,5 +2,6 @@
 .vscode-test/**
 .vscode-debug/**
 scripts/**
+package.json.marketplace
 .gitignore
 vsc-extension-quickstart.md
