@@ -188,12 +188,75 @@ def prepare_helix() -> None:
             (licenses / f"{slug}.license").write_text("MIT\n", encoding="utf-8")
 
 
+def kitty_theme(conf: Path, *, name: str, upstream: str, blurb: str) -> str:
+    lines = conf.read_text(encoding="utf-8").splitlines()
+    if lines and lines[0].startswith("#"):
+        lines = lines[1:]
+    body = "\n".join(line for line in lines if line.strip()).strip()
+    return (
+        "# vim:ft=kitty\n"
+        f"## name: {name}\n"
+        "## author: Micheal Andreuzza\n"
+        "## license: MIT\n"
+        f"## upstream: {upstream}\n"
+        f"## blurb: {blurb}\n\n"
+        f"{body}\n"
+    )
+
+
+def prepare_kitty() -> None:
+    dest = OUT / "kitty-themes/themes"
+    dest.mkdir(parents=True, exist_ok=True)
+
+    ser_map = [
+        ("midnight", "Serendipity Midnight"),
+        ("morning", "Serendipity Morning"),
+        ("sunset", "Serendipity Sunset"),
+    ]
+    for vid, name in ser_map:
+        src = PROJECTS / "kitty" / f"serendipity-{vid}.conf"
+        upstream = f"https://raw.githubusercontent.com/Serendipity-Theme/kitty/main/serendipity-{vid}.conf"
+        fname = name.replace(" ", "_") + ".conf"
+        (dest / fname).write_text(
+            kitty_theme(src, name=name, upstream=upstream, blurb=f"{name} from the Serendipity theme family."),
+            encoding="utf-8",
+        )
+
+    seq_dir = PROJECTS / "sequoia-ports" / "kitty"
+    for slug, display in SEQUOIA_VARIANTS:
+        src = seq_dir / f"sequoia-{slug}.conf"
+        if not src.exists():
+            continue
+        upstream = f"https://raw.githubusercontent.com/Sequoia-Theme/kitty/main/sequoia-{slug}.conf"
+        fname = display.replace(" ", "_") + ".conf"
+        (dest / fname).write_text(
+            kitty_theme(
+                src,
+                name=display,
+                upstream=upstream,
+                blurb=f"{display} from the Sequoia theme family.",
+            ),
+            encoding="utf-8",
+        )
+
+
+def prepare_base16() -> None:
+    dest = OUT / "base16"
+    dest.mkdir(parents=True, exist_ok=True)
+    src = PROJECTS / "base16"
+    if src.exists():
+        for path in sorted(src.glob("*.yaml")):
+            shutil.copy2(path, dest / path.name)
+
+
 def main() -> None:
     if OUT.exists():
         shutil.rmtree(OUT)
     prepare_warp()
     prepare_iterm2()
     prepare_helix()
+    prepare_kitty()
+    prepare_base16()
     print("Prepared submission files in", OUT)
 
 

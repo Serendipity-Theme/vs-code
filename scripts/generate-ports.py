@@ -575,7 +575,7 @@ def obsidian_manifest(*, name: str) -> str:
             "version": "1.0.1",
             "minAppVersion": "1.0.0",
             "author": "Micheal Andreuzza",
-            "authorUrl": "https://github.com/michael-andreuzza",
+            "authorUrl": "https://michaelandreuzza.com/",
         },
         indent=2,
     ) + "\n"
@@ -1368,7 +1368,7 @@ def spicetify_manifest(entries: list[tuple[str, Tokens]], brand: str) -> str:
                 "usercss": f"{folder}/user.css",
                 "schemes": f"{folder}/color.ini",
                 "authors": [
-                    {"name": "Micheal Andreuzza", "url": "https://github.com/michael-andreuzza"}
+                    {"name": "Micheal Andreuzza", "url": "https://michaelandreuzza.com/"},
                 ],
                 "tags": [tok.appearance, brand.lower(), "minimal"],
             }
