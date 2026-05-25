@@ -1998,15 +1998,25 @@ def generate_port_files(all_tokens: dict[str, Tokens]) -> None:
         f = f"themes/{fname(vid)}.json"
         zed_files.append(f)
         write(PROJECTS / "zed" / f, json.dumps(zed_theme(tok), indent=2) + "\n")
-    write(PROJECTS / "zed" / "extension.toml", f"""id = "serendipity"
-name = "Serendipity"
-version = "1.0.0"
+    write(PROJECTS / "zed" / "extension.toml", """id = "serendipity"
+name = "Serendipity Themes"
+version = "1.1.0"
 schema_version = 1
-authors = ["Micheal Andreuzza <michael@andreuzza.com>"]
-description = "Serendipity theme for Zed — Midnight, Morning, and Sunset"
-repository = "https://github.com/Serendipity-Theme/zed"
+authors = [
+  "Nguyen Dang Vinh <meocoder@gmail.com>",
+  "Micheal Andreuzza <michael@andreuzza.com>",
+]
+description = "Relaxed, gentle and modern | Serendipity theme for Zed"
+repository = "https://github.com/meocoder31099/Serendipity-Theme-Zed"
 """)
-    write_port("zed", "Install as a dev extension in Zed (**zed: extensions**).", "Serendipity for Zed", zed_files + ["extension.toml"])
+    write_port(
+        "zed",
+        """Install from [Zed Extensions](https://zed.dev/extensions/serendipity) (search **Serendipity Themes**).
+
+Source of truth: [meocoder31099/Serendipity-Theme-Zed](https://github.com/meocoder31099/Serendipity-Theme-Zed). Regenerate `themes/serendipity.json` from this folder when opening a PR there.""",
+        "Serendipity for Zed",
+        zed_files + ["extension.toml"],
+    )
 
     obsidian_files = generate_obsidian_port(
         PROJECTS / "obsidian",
