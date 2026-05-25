@@ -119,6 +119,27 @@ def hex_rgb_float(color: str) -> tuple[float, float, float]:
     return int(c[0:2], 16) / 255, int(c[2:4], 16) / 255, int(c[4:6], 16) / 255
 
 
+def hex_to_hsl(color: str) -> tuple[int, str, str]:
+    r, g, b = hex_rgb_float(color)
+    max_c = max(r, g, b)
+    min_c = min(r, g, b)
+    lightness = (max_c + min_c) / 2
+    if max_c == min_c:
+        hue = 0.0
+        saturation = 0.0
+    else:
+        delta = max_c - min_c
+        saturation = delta / (2 - max_c - min_c) if lightness > 0.5 else delta / (max_c + min_c)
+        if max_c == r:
+            hue = (g - b) / delta + (6 if g < b else 0)
+        elif max_c == g:
+            hue = (b - r) / delta + 2
+        else:
+            hue = (r - g) / delta + 4
+        hue /= 6
+    return round(hue * 360), f"{round(saturation * 100)}%", f"{round(lightness * 100)}%"
+
+
 def scope_fg(token_colors: list, *needles: str) -> str | None:
     for rule in token_colors:
         scopes = rule.get("scope")
@@ -468,10 +489,32 @@ def zed_theme(tokens: Tokens) -> dict:
 
 
 def obsidian_css_vars(tokens: Tokens) -> str:
-    return f"""  --background-primary: {tokens.background};
+    scheme = "dark" if tokens.appearance == "dark" else "light"
+    accent_h, accent_s, accent_l = hex_to_hsl(tokens.accent)
+    return f"""  color-scheme: {scheme};
+  --accent-h: {accent_h};
+  --accent-s: {accent_s};
+  --accent-l: {accent_l};
+  --color-base-00: {tokens.background};
+  --color-base-05: {tokens.background};
+  --color-base-10: {tokens.background};
+  --color-base-20: {tokens.surface};
+  --color-base-25: {tokens.surface};
+  --color-base-30: {tokens.muted};
+  --color-base-35: {tokens.operator};
+  --color-base-40: {tokens.operator};
+  --color-base-50: {tokens.muted};
+  --color-base-60: {tokens.muted};
+  --color-base-70: {tokens.foreground};
+  --color-base-100: {tokens.foreground};
+  --background-primary: {tokens.background};
   --background-primary-alt: {tokens.background};
   --background-secondary: {tokens.surface};
   --background-secondary-alt: {tokens.background};
+  --background-modifier-border: {with_alpha(tokens.muted, "40")};
+  --background-modifier-border-hover: {with_alpha(tokens.muted, "66")};
+  --background-modifier-hover: {tokens.selection_bg};
+  --background-modifier-active-hover: {tokens.selection_bg};
   --text-normal: {tokens.foreground};
   --text-muted: {tokens.muted};
   --text-faint: {tokens.muted};
@@ -493,7 +536,9 @@ def obsidian_css_vars(tokens: Tokens) -> str:
   --code-tag: {tokens.type_color};
   --code-value: {tokens.constant};
   --titlebar-background: {tokens.background};
+  --titlebar-background-focused: {tokens.background};
   --tab-background-active: {tokens.background};
+  --ribbon-background: {tokens.surface};
   --nav-item-background-hover: {tokens.selection_bg};
   --nav-item-background-active: {tokens.selection_bg};
   --checkbox-color: {tokens.accent};
@@ -501,7 +546,7 @@ def obsidian_css_vars(tokens: Tokens) -> str:
 
 
 def obsidian_css(tokens: Tokens, *, brand: str = "Serendipity") -> str:
-    selector = ".theme-dark" if tokens.appearance == "dark" else ".theme-light"
+    selector = "body.theme-dark" if tokens.appearance == "dark" else "body.theme-light"
     return f"""/* {brand} {tokens.name} for Obsidian */
 {selector} {{
 {obsidian_css_vars(tokens)}}}
@@ -510,10 +555,10 @@ def obsidian_css(tokens: Tokens, *, brand: str = "Serendipity") -> str:
 
 def obsidian_theme_css(light: Tokens, dark: Tokens, *, brand: str) -> str:
     return f"""/* {brand} for Obsidian — community theme */
-.theme-light {{
+body.theme-light {{
 {obsidian_css_vars(light)}}}
 
-.theme-dark {{
+body.theme-dark {{
 {obsidian_css_vars(dark)}}}
 """
 
@@ -522,7 +567,7 @@ def obsidian_manifest(*, name: str) -> str:
     return json.dumps(
         {
             "name": name,
-            "version": "1.0.0",
+            "version": "1.0.1",
             "minAppVersion": "1.0.0",
             "author": "Micheal Andreuzza",
             "authorUrl": "https://github.com/michael-andreuzza",
@@ -532,7 +577,7 @@ def obsidian_manifest(*, name: str) -> str:
 
 
 def obsidian_versions_json() -> str:
-    return json.dumps({"1.0.0": "1.0.0"}, indent=2) + "\n"
+    return json.dumps({"1.0.0": "1.0.0", "1.0.1": "1.0.0"}, indent=2) + "\n"
 
 
 def obsidian_screenshot_png(tokens: Tokens, theme_name: str, path: Path) -> None:
