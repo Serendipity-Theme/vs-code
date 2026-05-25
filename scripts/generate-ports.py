@@ -467,11 +467,8 @@ def zed_theme(tokens: Tokens) -> dict:
     }
 
 
-def obsidian_css(tokens: Tokens) -> str:
-    selector = ".theme-dark" if tokens.appearance == "dark" else ".theme-light"
-    return f"""/* Serendipity {tokens.name} for Obsidian */
-{selector} {{
-  --background-primary: {tokens.background};
+def obsidian_css_vars(tokens: Tokens) -> str:
+    return f"""  --background-primary: {tokens.background};
   --background-primary-alt: {tokens.background};
   --background-secondary: {tokens.surface};
   --background-secondary-alt: {tokens.background};
@@ -500,8 +497,259 @@ def obsidian_css(tokens: Tokens) -> str:
   --nav-item-background-hover: {tokens.selection_bg};
   --nav-item-background-active: {tokens.selection_bg};
   --checkbox-color: {tokens.accent};
-}}
 """
+
+
+def obsidian_css(tokens: Tokens, *, brand: str = "Serendipity") -> str:
+    selector = ".theme-dark" if tokens.appearance == "dark" else ".theme-light"
+    return f"""/* {brand} {tokens.name} for Obsidian */
+{selector} {{
+{obsidian_css_vars(tokens)}}}
+"""
+
+
+def obsidian_theme_css(light: Tokens, dark: Tokens, *, brand: str) -> str:
+    return f"""/* {brand} for Obsidian — community theme */
+.theme-light {{
+{obsidian_css_vars(light)}}}
+
+.theme-dark {{
+{obsidian_css_vars(dark)}}}
+"""
+
+
+def obsidian_manifest(*, name: str) -> str:
+    return json.dumps(
+        {
+            "name": name,
+            "version": "1.0.0",
+            "minAppVersion": "1.0.0",
+            "author": "Micheal Andreuzza",
+            "authorUrl": "https://github.com/michael-andreuzza",
+        },
+        indent=2,
+    ) + "\n"
+
+
+def obsidian_versions_json() -> str:
+    return json.dumps({"1.0.0": "1.0.0"}, indent=2) + "\n"
+
+
+def obsidian_screenshot_png(tokens: Tokens, theme_name: str, path: Path) -> None:
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError as exc:
+        raise SystemExit("Install Pillow to generate Obsidian screenshots: pip3 install pillow") from exc
+
+    width, height = 512, 288
+    img = Image.new("RGB", (width, height), tokens.background)
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.load_default()
+
+    sidebar_w = 96
+    draw.rectangle((0, 0, width, 22), fill=tokens.surface)
+    draw.text((10, 6), theme_name, fill=tokens.foreground, font=font)
+    draw.rectangle((0, 22, sidebar_w, height), fill=tokens.surface)
+    draw.text((12, 40), "Notes", fill=tokens.accent, font=font)
+    draw.text((12, 58), "Daily", fill=tokens.muted, font=font)
+    draw.text((12, 76), "Projects", fill=tokens.muted, font=font)
+
+    tab_y = 22
+    draw.rectangle((sidebar_w, tab_y, sidebar_w + 92, tab_y + 24), fill=tokens.background)
+    draw.text((sidebar_w + 10, tab_y + 6), "Welcome", fill=tokens.foreground, font=font)
+    draw.rectangle((sidebar_w + 92, tab_y, sidebar_w + 160, tab_y + 24), fill=tokens.surface)
+    draw.text((sidebar_w + 102, tab_y + 6), "Ideas", fill=tokens.muted, font=font)
+
+    content_x = sidebar_w + 16
+    y = 58
+    draw.text((content_x, y), "Welcome to Obsidian", fill=tokens.foreground, font=font)
+    draw.text((content_x, y + 22), "Elegant notes with Serendipity.", fill=tokens.muted, font=font)
+    draw.text((content_x, y + 48), "- Capture ideas", fill=tokens.foreground, font=font)
+    draw.text((content_x, y + 64), "- Link thoughts", fill=tokens.function, font=font)
+    draw.text((content_x, y + 80), "- Build knowledge", fill=tokens.string, font=font)
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path, format="PNG")
+
+
+def obsidian_community_md(*, brand: str, theme_name: str, github: str, light_name: str, dark_name: str, extra_variants: list[str]) -> str:
+    extras = "\n".join(f"- `{name}` — CSS snippet in `variants/`" for name in extra_variants)
+    extras_block = f"\n\nExtra variants (CSS snippets):\n\n{extras}\n" if extras else ""
+    return f"""# Publish {theme_name} to Obsidian Community Themes
+
+## Repository checklist
+
+- [x] `manifest.json` at repo root (name must match theme folder: **{theme_name}**)
+- [x] `theme.css` at repo root — **{light_name}** (light) + **{dark_name}** (dark)
+- [x] `screenshot.png` — 512×288 preview
+- [x] `versions.json` — maps `1.0.0` → `1.0.0`
+- [x] `README.md` and `LICENSE`
+{extras_block}
+## GitHub release
+
+1. Create release tag **`1.0.0`** (must match `manifest.json` version).
+2. Attach **`manifest.json`** and **`theme.css`** as release assets.
+3. Push tag: `git tag 1.0.0 && git push origin 1.0.0`
+
+Or with GitHub CLI:
+
+```bash
+gh release create 1.0.0 manifest.json theme.css --title "1.0.0" --notes "Initial community theme release."
+```
+
+## Submit
+
+1. Sign in at [community.obsidian.md](https://community.obsidian.md) with your Obsidian account.
+2. Link your GitHub account in profile settings.
+3. **Themes → New theme** → enter `{github}`.
+4. Agree to developer policies and submit.
+
+Obsidian reads `manifest.json` from the default branch and installs `theme.css` + `manifest.json` from the GitHub release matching the manifest version.
+
+## Updates
+
+Bump `version` in `manifest.json`, add the new version to `versions.json`, commit, and create a new tagged release with updated assets.
+"""
+
+
+def obsidian_port_readme(
+    *,
+    brand: str,
+    theme_name: str,
+    github: str,
+    light_name: str,
+    dark_name: str,
+    snippet_files: list[str],
+    extra_variants: list[str],
+) -> str:
+    variants = "\n".join(
+        f"- **{vid.replace('-', ' ').title()}** — {appearance}"
+        for vid, appearance in [
+            ("midnight", "dark"),
+            ("morning", "light"),
+            ("sunset", "dark"),
+        ]
+    ) if brand == "Serendipity" else "\n".join(
+        f"- **{vid.replace('-', ' ').title()}** — {appearance}"
+        for vid, appearance in [
+            ("moonlight-dark", "dark"),
+            ("moonlight-light", "light"),
+            ("monochrome-dark", "dark"),
+            ("monochrome-light", "light"),
+            ("retro-dark", "dark"),
+            ("retro-light", "light"),
+        ]
+    )
+    snippet_list = ", ".join(f"`{name}`" for name in snippet_files)
+    extra_block = ""
+    if extra_variants:
+        extra_list = ", ".join(f"`variants/{name}`" for name in extra_variants)
+        extra_block = f"""
+
+### Extra variants (CSS snippets)
+
+Copy files from `variants/` into `.obsidian/snippets/` and enable in **Appearance → CSS snippets**. Only enable one dark snippet at a time.
+
+Available: {extra_list}.
+"""
+    return f"""![{brand}]({HEADER})
+
+# {brand} for Obsidian
+
+Elegant, minimal, and clean color palette for your tools.
+
+See other interfaces at the [official website]({WEBSITE}).
+
+## Available themes
+
+{variants}
+
+## Installation
+
+### Community theme (recommended)
+
+Install **{theme_name}** from Obsidian **Settings → Appearance → Manage → Community themes**, or browse from [community.obsidian.md](https://community.obsidian.md).
+
+The community theme ships **{light_name}** (light mode) and **{dark_name}** (dark mode) in `theme.css`.
+{extra_block}
+### CSS snippets (single variant)
+
+Copy a CSS file into `.obsidian/snippets/` and enable in **Appearance → CSS snippets**.
+
+Available files: {snippet_list}.
+
+See `COMMUNITY.md` for publishing and release steps.
+
+## Created by
+
+[Micheal Andreuzza](https://github.com/michael-andreuzza)
+"""
+
+
+def generate_obsidian_port(
+    port_dir: Path,
+    all_tokens: dict[str, Tokens],
+    *,
+    brand: str,
+    theme_name: str,
+    github: str,
+    light_vid: str,
+    dark_vid: str,
+    fname_fn,
+    extra_variant_ids: list[str],
+) -> list[str]:
+    files: list[str] = []
+    light = all_tokens[light_vid]
+    dark = all_tokens[dark_vid]
+
+    write(port_dir / "manifest.json", obsidian_manifest(name=theme_name))
+    files.append("manifest.json")
+
+    write(port_dir / "theme.css", obsidian_theme_css(light, dark, brand=brand))
+    files.append("theme.css")
+
+    write(port_dir / "versions.json", obsidian_versions_json())
+    files.append("versions.json")
+
+    screenshot = "screenshot.png"
+    obsidian_screenshot_png(dark, theme_name, port_dir / screenshot)
+    files.append(screenshot)
+
+    write(port_dir / "COMMUNITY.md", obsidian_community_md(
+        brand=brand,
+        theme_name=theme_name,
+        github=github,
+        light_name=light.name,
+        dark_name=dark.name,
+        extra_variants=[fname_fn(vid) + ".css" for vid in extra_variant_ids],
+    ))
+    files.append("COMMUNITY.md")
+
+    snippet_files: list[str] = []
+    extra_files: list[str] = []
+    for vid, tok in all_tokens.items():
+        css_name = f"{fname_fn(vid)}.css"
+        write(port_dir / css_name, obsidian_css(tok, brand=brand))
+        snippet_files.append(css_name)
+        files.append(css_name)
+        if vid in extra_variant_ids:
+            variant_path = f"variants/{css_name}"
+            write(port_dir / variant_path, obsidian_css(tok, brand=brand))
+            extra_files.append(variant_path)
+            files.append(variant_path)
+
+    write(port_dir / "LICENSE", LICENSE + "\n")
+    write(port_dir / "README.md", obsidian_port_readme(
+        brand=brand,
+        theme_name=theme_name,
+        github=github,
+        light_name=light.name,
+        dark_name=dark.name,
+        snippet_files=snippet_files,
+        extra_variants=[fname_fn(vid) + ".css" for vid in extra_variant_ids],
+    ))
+    files.extend(["LICENSE", "README.md"])
+    return files
 
 
 def prism_css(tokens: Tokens) -> str:
@@ -948,7 +1196,7 @@ def raycast(tokens: Tokens) -> str:
     data = {
         "author": "Micheal Andreuzza",
         "authorUsername": "michael-andreuzza",
-        "version": "1",
+        "version": 1,
         "name": f"Serendipity {tokens.variant_id.title()}",
         "appearance": tokens.appearance,
         "colors": {
@@ -1042,6 +1290,26 @@ def spicetify_user_css(tokens: Tokens) -> str:
 """
 
 
+def spicetify_manifest(entries: list[tuple[str, Tokens]], brand: str) -> str:
+    items = []
+    for folder, tok in entries:
+        items.append(
+            {
+                "name": folder,
+                "description": f"{brand} for Spicetify — {tok.name} ({tok.appearance} mode).",
+                "preview": "preview.png",
+                "readme": "README.md",
+                "usercss": f"{folder}/user.css",
+                "schemes": f"{folder}/color.ini",
+                "authors": [
+                    {"name": "Micheal Andreuzza", "url": "https://github.com/michael-andreuzza"}
+                ],
+                "tags": [tok.appearance, brand.lower(), "minimal"],
+            }
+        )
+    return json.dumps(items, indent=2) + "\n"
+
+
 def firefox_userchrome(tokens: Tokens) -> str:
     return f"""/* Serendipity {tokens.name} — Firefox userChrome.css */
 @namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
@@ -1106,57 +1374,439 @@ def homepage_css(tokens: Tokens) -> str:
 """
 
 
-def jetbrains_icls(tokens: Tokens) -> str:
-    t = tokens.terminal
-    entries = [
-        ("Background", tokens.background),
-        ("Foreground", tokens.foreground),
-        ("Caret", tokens.cursor),
-        ("SelectionBackground", tokens.selection_bg),
-        ("Line numbers", tokens.muted),
-        ("Gutter background", tokens.background),
-        ("Comment", tokens.comment),
-        ("Keyword", tokens.keyword),
-        ("String", tokens.string),
-        ("Number", tokens.constant),
-        ("Function call", tokens.function),
-        ("Function declaration", tokens.function),
-        ("Local variable", tokens.variable),
-        ("Class name", tokens.type_color),
-        ("Type name", tokens.type_color),
-        ("Errors", tokens.error),
-        ("Default text", tokens.foreground),
-    ]
-    options = "\n".join(
-        f'    <option name="{name}">\n      <value>\n        <option name="FOREGROUND" value="{hex6(c).lstrip("#")}" />\n      </value>\n    </option>'
-        if "Background" not in name and "Gutter" not in name and "Selection" not in name
-        else (
-            f'    <option name="{name}">\n      <value>\n        <option name="BACKGROUND" value="{hex6(c).lstrip("#")}" />\n      </value>\n    </option>'
-            if "Background" in name or "Gutter" in name or "Selection" in name
-            else f'    <option name="{name}">\n      <value>\n        <option name="FOREGROUND" value="{hex6(c).lstrip("#")}" />\n      </value>\n    </option>'
+def jetbrains_scheme_name(tokens: Tokens) -> str:
+    return f"Serendipity {tokens.variant_id.title()}"
+
+
+def jetbrains_icls(tokens: Tokens, scheme_name: str | None = None) -> str:
+    scheme_name = scheme_name or jetbrains_scheme_name(tokens)
+    parent = "Darcula" if tokens.appearance == "dark" else "Default"
+
+    def h(color: str) -> str:
+        return hex6(color).lstrip("#")
+
+    def fg_attr(name: str, color: str) -> str:
+        return (
+            f'    <option name="{name}">\n'
+            f'      <value>\n'
+            f'        <option name="FOREGROUND" value="{h(color)}" />\n'
+            f"      </value>\n"
+            f"    </option>"
         )
-        for name, c in entries
+
+    bg = tokens.background
+    fg = tokens.foreground
+    surface = tokens.surface
+    selection = tokens.selection_bg[:7]
+
+    attributes = "\n".join(
+        [
+            f'    <option name="TEXT">\n      <value>\n        <option name="FOREGROUND" value="{h(fg)}" />\n        <option name="BACKGROUND" value="{h(bg)}" />\n      </value>\n    </option>',
+            fg_attr("DEFAULT_KEYWORD", tokens.keyword),
+            fg_attr("DEFAULT_STRING", tokens.string),
+            fg_attr("DEFAULT_NUMBER", tokens.constant),
+            fg_attr("DEFAULT_LINE_COMMENT", tokens.comment),
+            fg_attr("DEFAULT_BLOCK_COMMENT", tokens.comment),
+            fg_attr("DEFAULT_DOC_COMMENT", tokens.comment),
+            fg_attr("DEFAULT_FUNCTION_CALL", tokens.function),
+            fg_attr("DEFAULT_FUNCTION_DECLARATION", tokens.function),
+            fg_attr("DEFAULT_LOCAL_VARIABLE", tokens.variable),
+            fg_attr("DEFAULT_PARAMETER", tokens.variable),
+            fg_attr("DEFAULT_GLOBAL_VARIABLE", tokens.variable),
+            fg_attr("DEFAULT_IDENTIFIER", tokens.variable),
+            fg_attr("DEFAULT_CLASS_NAME", tokens.type_color),
+            fg_attr("DEFAULT_INTERFACE_NAME", tokens.type_color),
+            fg_attr("DEFAULT_TYPE_PARAMETER", tokens.type_color),
+            fg_attr("DEFAULT_INSTANCE_FIELD", tokens.variable),
+            fg_attr("DEFAULT_STATIC_FIELD", tokens.constant),
+            fg_attr("DEFAULT_METADATA", tokens.type_color),
+            fg_attr("DEFAULT_CONSTANT", tokens.constant),
+            fg_attr("DEFAULT_INVALID_STRING_ESCAPE", tokens.error),
+            fg_attr("JSON.KEYWORD", tokens.keyword),
+            fg_attr("JSON.STRING", tokens.string),
+            fg_attr("JSON.NUMBER", tokens.constant),
+            fg_attr("JSON.PROPERTY_KEY", tokens.keyword),
+            fg_attr("JS.KEYWORD", tokens.keyword),
+            fg_attr("JS.LOCAL_VARIABLE", tokens.variable),
+            fg_attr("JS.GLOBAL_VARIABLE", tokens.variable),
+            fg_attr("JS.GLOBAL_FUNCTION", tokens.function),
+            fg_attr("JS.INSTANCE_MEMBER_FUNCTION", tokens.function),
+        ]
     )
-    return f"""<scheme name="Serendipity {tokens.variant_id.title()}" version="142" parent_scheme="Darcula">
+
+    return f"""<scheme name="{scheme_name}" version="142" parent_scheme="{parent}">
   <meta-info>
     <property name="created">2026-05-24</property>
     <property name="ide">idea</property>
     <property name="ideVersion">2024.1</property>
     <property name="modified">2026-05-24</property>
-    <property name="originalScheme">Serendipity {tokens.variant_id.title()}</property>
+    <property name="originalScheme">{scheme_name}</property>
   </meta-info>
   <colors>
-    <option name="CONSOLE_BACKGROUND_KEY" value="{tokens.background.lstrip('#')}" />
-    <option name="CARET_COLOR" value="{tokens.cursor.lstrip('#')}" />
-    <option name="GUTTER_BACKGROUND" value="{tokens.background.lstrip('#')}" />
-    <option name="SELECTION_BACKGROUND" value="{tokens.selection_bg[:7].lstrip('#')}" />
-    <option name="TEXT" value="{tokens.foreground.lstrip('#')}" />
+    <option name="CONSOLE_BACKGROUND_KEY" value="{h(bg)}" />
+    <option name="CARET_COLOR" value="{h(tokens.cursor)}" />
+    <option name="CARET_ROW_COLOR" value="{h(surface)}" />
+    <option name="GUTTER_BACKGROUND" value="{h(bg)}" />
+    <option name="LINE_NUMBERS_COLOR" value="{h(tokens.muted)}" />
+    <option name="LINE_NUMBER_ON_CARET_ROW_COLOR" value="{h(tokens.cursor)}" />
+    <option name="SELECTION_BACKGROUND" value="{h(selection)}" />
+    <option name="INDENT_GUIDE" value="{h(tokens.muted)}" />
   </colors>
   <attributes>
-{options}
+{attributes}
   </attributes>
 </scheme>
 """
+
+
+def jetbrains_plugin_xml(
+    scheme_names: list[str],
+    *,
+    plugin_id: str,
+    plugin_name: str,
+    brand: str,
+    website: str,
+    github: str,
+) -> str:
+    schemes = "\n".join(
+        f'    <bundledColorScheme path="/colors/{name}" id="{name}"/>'
+        for name in scheme_names
+    )
+    variants = ", ".join(name.replace(f"{brand} ", "") for name in scheme_names)
+    return f"""<idea-plugin>
+  <id>{plugin_id}</id>
+  <name>{plugin_name}</name>
+  <vendor email="hello@michaelandreuzza.com" url="{website}">Micheal Andreuzza</vendor>
+  <description><![CDATA[
+<p><strong>{brand}</strong> editor color schemes for JetBrains IDEs.</p>
+<p>Includes {variants}.</p>
+<p>Source: <a href="{github}">{github}</a></p>
+  ]]></description>
+  <depends>com.intellij.modules.lang</depends>
+  <idea-version since-build="231"/>
+  <extensions defaultExtensionNs="com.intellij">
+{schemes}
+  </extensions>
+</idea-plugin>
+"""
+
+
+def jetbrains_gradle_properties(*, plugin_group: str, plugin_name: str, root_name: str) -> str:
+    return f"""pluginGroup={plugin_group}
+pluginName={plugin_name}
+pluginVersion=1.0.1
+pluginSinceBuild=231
+platformVersion=2024.2.5
+javaVersion=21
+org.gradle.configuration-cache=true
+rootProjectName={root_name}
+"""
+
+
+def jetbrains_settings_gradle(root_name: str) -> str:
+    return f"""rootProject.name = "{root_name}"
+
+pluginManagement {{
+  repositories {{
+    mavenCentral()
+    gradlePluginPortal()
+  }}
+  plugins {{
+    id("org.jetbrains.intellij.platform") version "2.16.0"
+  }}
+}}
+
+plugins {{
+  id("org.gradle.toolchains.foojay-resolver-convention") version "1.0.0"
+}}
+"""
+
+
+def jetbrains_build_gradle() -> str:
+    return """plugins {
+    id("java")
+    id("org.jetbrains.intellij.platform") version "2.16.0"
+}
+
+group = providers.gradleProperty("pluginGroup").get()
+version = providers.gradleProperty("pluginVersion").get()
+
+repositories {
+    mavenCentral()
+    intellijPlatform {
+        defaultRepositories()
+    }
+}
+
+dependencies {
+    intellijPlatform {
+        intellijIdea(providers.gradleProperty("platformVersion").get())
+    }
+}
+
+intellijPlatform {
+    buildSearchableOptions = false
+    pluginConfiguration {
+        id = providers.gradleProperty("pluginGroup")
+        name = providers.gradleProperty("pluginName")
+        version = providers.gradleProperty("pluginVersion")
+        ideaVersion {
+            sinceBuild = providers.gradleProperty("pluginSinceBuild")
+        }
+    }
+}
+"""
+
+
+def jetbrains_plugin_icon_svg(accent: str, background: str) -> str:
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect width="128" height="128" rx="24" fill="{background}"/>
+  <rect x="24" y="24" width="80" height="12" rx="4" fill="{accent}" opacity="0.9"/>
+  <rect x="24" y="44" width="56" height="8" rx="3" fill="{accent}" opacity="0.55"/>
+  <rect x="24" y="60" width="64" height="8" rx="3" fill="{accent}" opacity="0.35"/>
+  <rect x="24" y="76" width="48" height="8" rx="3" fill="{accent}" opacity="0.55"/>
+  <rect x="24" y="92" width="72" height="8" rx="3" fill="{accent}" opacity="0.35"/>
+</svg>
+"""
+
+
+def jetbrains_gitignore() -> str:
+    return """.gradle/
+build/
+.idea/
+*.iml
+out/
+"""
+
+
+def jetbrains_github_workflow() -> str:
+    return """name: Build Plugin
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: "21"
+      - name: Build plugin
+        run: ./gradlew buildPlugin --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plugin-distribution
+          path: build/distributions/*.zip
+"""
+
+
+def jetbrains_marketplace_md(*, brand: str, plugin_name: str, github: str, scheme_names: list[str]) -> str:
+    screenshot_lines = "\n".join(
+        f"- `{name}` → `screenshots/{name.lower().replace(' ', '-')}.png`"
+        for name in scheme_names
+    )
+    return f"""# Publish {brand} to JetBrains Marketplace
+
+This repository includes a ready-to-build IntelliJ Platform plugin with bundled editor color schemes.
+
+## What is included
+
+- Gradle plugin project (build with `./gradlew buildPlugin`)
+- Bundled schemes: {", ".join(scheme_names)}
+- Marketplace screenshots in `screenshots/` (1280×800 previews)
+- GitHub Actions workflow that uploads a `.zip` artifact on every push to `main`
+
+## You do not need a JetBrains IDE locally
+
+1. Push this repo (or download the **plugin-distribution** artifact from the latest GitHub Actions run).
+2. Unzip the artifact — it is the file you upload to Marketplace.
+
+Screenshots in `screenshots/` are generated previews showing each scheme's syntax colors. You can replace them later with real IDE captures if you install IntelliJ.
+
+## Create a JetBrains account (one time)
+
+1. Go to [plugins.jetbrains.com](https://plugins.jetbrains.com).
+2. Sign in with GitHub or create a JetBrains Account.
+3. Open your profile menu → **Upload plugin**.
+4. Accept the **Marketplace Developer Agreement** and create a **Vendor profile** (your name or `{brand}-Theme`).
+
+## Upload {plugin_name}
+
+1. Download the plugin ZIP from GitHub Actions (**Actions → Build Plugin → plugin-distribution**).
+2. On [plugins.jetbrains.com/author/me](https://plugins.jetbrains.com/author/me), click **Upload plugin**.
+3. Select the ZIP file.
+4. Fill in the listing:
+   - **Name**: {plugin_name}
+   - **Tags**: Theme, Color Scheme
+   - **License**: MIT — link `{github}`
+   - **Description**: copy from README; mention {brand} variants
+5. Upload screenshots from `screenshots/`:
+
+{screenshot_lines}
+
+6. Submit for review ([upload guide](https://plugins.jetbrains.com/docs/marketplace/uploading-a-new-plugin.html)).
+
+Approval usually takes a few business days. After approval, users install via **Settings → Plugins → Marketplace**.
+
+## Manual scheme import (no plugin)
+
+See `INSTALL.md` to import `.icls` files directly.
+
+## Rebuild locally (optional)
+
+Requires Java 21+:
+
+```bash
+./gradlew buildPlugin
+open build/distributions/
+```
+"""
+
+
+def jetbrains_screenshot_png(tokens: Tokens, scheme_name: str, path: Path) -> None:
+    try:
+        from PIL import Image, ImageDraw, ImageFont
+    except ImportError as exc:
+        raise SystemExit("Install Pillow to generate JetBrains screenshots: pip3 install pillow") from exc
+
+    width, height = 1280, 800
+    img = Image.new("RGB", (width, height), tokens.background)
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.load_default()
+    title_font = ImageFont.load_default()
+
+    draw.rectangle((0, 0, width, 48), fill=tokens.surface)
+    draw.text((24, 16), scheme_name, fill=tokens.foreground, font=title_font)
+    draw.text((width - 260, 16), "JetBrains Color Scheme", fill=tokens.muted, font=font)
+
+    gutter = 72
+    draw.rectangle((0, 48, gutter, height), fill=tokens.surface)
+    code_x = gutter + 28
+    y = 88
+    line_h = 34
+
+    sample_lines = [
+        ("// Syntax preview", tokens.comment, False),
+        ("fun greet(name: String) {{", tokens.keyword, False),
+        ('    val message = "Hello"', tokens.variable, True),
+        ("    println(message)", tokens.function, False),
+        ("}}", tokens.keyword, False),
+    ]
+
+    for i, (text, color, selected) in enumerate(sample_lines, start=1):
+        line_y = y + (i - 1) * line_h
+        draw.text((16, line_y + 6), str(i), fill=tokens.muted, font=font)
+        if selected:
+            draw.rectangle(
+                (gutter, line_y, width, line_y + line_h - 4),
+                fill=tokens.selection_bg[:7] if len(tokens.selection_bg) >= 7 else tokens.selection_bg,
+            )
+        parts = []
+        if text.startswith("fun "):
+            parts = [("fun ", tokens.keyword), ("greet", tokens.function), ("(name: ", tokens.foreground), ("String", tokens.type_color), (") {", tokens.foreground)]
+        elif text.startswith("    val "):
+            parts = [("    val ", tokens.keyword), ('message = "Hello"', tokens.string)]
+        elif text.startswith("    println"):
+            parts = [("    ", tokens.foreground), ("println", tokens.function), ("(message)", tokens.foreground)]
+        else:
+            parts = [(text, color)]
+        x = code_x
+        for segment, seg_color in parts:
+            draw.text((x, line_y + 6), segment, fill=seg_color, font=font)
+            x += draw.textlength(segment, font=font)
+
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path, format="PNG")
+
+
+def generate_jetbrains_plugin(
+    port_dir: Path,
+    all_tokens: dict[str, Tokens],
+    *,
+    brand: str,
+    plugin_id: str,
+    plugin_name: str,
+    github: str,
+    root_name: str,
+    scheme_name_fn,
+) -> list[str]:
+    scheme_entries = [(scheme_name_fn(tok), tok) for tok in all_tokens.values()]
+    scheme_names = [name for name, _ in scheme_entries]
+    files: list[str] = []
+
+    for scheme_name, tok in scheme_entries:
+        icls_name = f"{scheme_name}.icls"
+        files.append(icls_name)
+        write(port_dir / icls_name, jetbrains_icls(tok, scheme_name))
+
+        color_path = port_dir / "src/main/resources/colors" / f"{scheme_name}.xml"
+        write(color_path, jetbrains_icls(tok, scheme_name))
+
+        shot_name = f"screenshots/{scheme_name.lower().replace(' ', '-')}.png"
+        files.append(shot_name)
+        jetbrains_screenshot_png(tok, scheme_name, port_dir / shot_name)
+
+    write(port_dir / "src/main/resources/META-INF/plugin.xml", jetbrains_plugin_xml(
+        scheme_names,
+        plugin_id=plugin_id,
+        plugin_name=plugin_name,
+        brand=brand,
+        website=WEBSITE,
+        github=github,
+    ))
+    accent = next(iter(all_tokens.values())).accent
+    background = next(iter(all_tokens.values())).background
+    write(port_dir / "src/main/resources/META-INF/pluginIcon.svg", jetbrains_plugin_icon_svg(accent, background))
+    write(port_dir / "build.gradle.kts", jetbrains_build_gradle())
+    write(port_dir / "settings.gradle.kts", jetbrains_settings_gradle(root_name))
+    write(port_dir / "gradle.properties", jetbrains_gradle_properties(
+        plugin_group=plugin_id,
+        plugin_name=plugin_name,
+        root_name=root_name,
+    ))
+    write(port_dir / ".gitignore", jetbrains_gitignore())
+    write(port_dir / ".github/workflows/build-plugin.yml", jetbrains_github_workflow())
+    write(port_dir / "MARKETPLACE.md", jetbrains_marketplace_md(
+        brand=brand,
+        plugin_name=plugin_name,
+        github=github,
+        scheme_names=scheme_names,
+    ))
+    write(port_dir / "INSTALL.md", f"""# Install {brand} color schemes in JetBrains IDEs
+
+## Marketplace (recommended)
+
+Install **{plugin_name}** from [JetBrains Marketplace](https://plugins.jetbrains.com) after publishing.
+See `MARKETPLACE.md` for upload steps and GitHub Actions build artifacts.
+
+## Manual import
+
+1. Open **Settings → Editor → Color Scheme → Gear icon → Import Scheme…**
+2. Select a `.icls` file from this repository.
+3. Choose **{scheme_names[0]}** or another variant.
+
+These `.icls` files are the same schemes bundled in the plugin.
+""")
+
+    plugin_files = [
+        "build.gradle.kts",
+        "settings.gradle.kts",
+        "gradle.properties",
+        "src/main/resources/META-INF/plugin.xml",
+        "src/main/resources/META-INF/pluginIcon.svg",
+        "MARKETPLACE.md",
+        "INSTALL.md",
+        ".gitignore",
+        ".github/workflows/build-plugin.yml",
+    ]
+    plugin_files.extend(f"src/main/resources/colors/{name}.xml" for name in scheme_names)
+    files.extend(plugin_files)
+    return files
 
 
 def figma_palette(tokens: Tokens) -> str:
@@ -1217,12 +1867,17 @@ repository = "https://github.com/Serendipity-Theme/zed"
 """)
     write_port("zed", "Install as a dev extension in Zed (**zed: extensions**).", "Serendipity for Zed", zed_files + ["extension.toml"])
 
-    obsidian_files = []
-    for vid, tok in all_tokens.items():
-        f = f"{fname(vid)}.css"
-        obsidian_files.append(f)
-        write(PROJECTS / "obsidian" / f, obsidian_css(tok))
-    write_port("obsidian", "Copy CSS into `.obsidian/snippets/` and enable in Appearance settings.", "Serendipity for Obsidian", obsidian_files)
+    obsidian_files = generate_obsidian_port(
+        PROJECTS / "obsidian",
+        all_tokens,
+        brand="Serendipity",
+        theme_name="Serendipity",
+        github="https://github.com/Serendipity-Theme/obsidian",
+        light_vid="morning",
+        dark_vid="midnight",
+        fname_fn=fname,
+        extra_variant_ids=["sunset"],
+    )
 
     prism_files = []
     for vid, tok in all_tokens.items():
@@ -1353,7 +2008,7 @@ repository = "https://github.com/Serendipity-Theme/zed"
         f = f"{fname(vid)}.json"
         raycast_files.append(f)
         write(PROJECTS / "raycast" / f, raycast(tok))
-    write_port("raycast", "Import JSON via Raycast → Settings → Appearance → Import theme.", "Serendipity for Raycast", raycast_files)
+    write_port("raycast", "Import JSON via Raycast → Settings → Appearance → Import theme, or browse on [themes.ray.so](https://themes.ray.so).", "Serendipity for Raycast", raycast_files)
 
     typora_files = []
     for vid, tok in all_tokens.items():
@@ -1363,13 +2018,28 @@ repository = "https://github.com/Serendipity-Theme/zed"
     write_port("typora", "Copy a theme folder to Typora's themes directory. Mark Text can import the same CSS.", "Serendipity for Typora", typora_files)
 
     spicetify_files = []
+    spicetify_entries: list[tuple[str, Tokens]] = []
     for vid, tok in all_tokens.items():
         d = f"Serendipity-{vid.title()}"
         spicetify_files.append(f"{d}/color.ini")
         spicetify_files.append(f"{d}/user.css")
+        spicetify_entries.append((d, tok))
         write(PROJECTS / "spicetify" / d / "color.ini", spicetify_color_ini(tok))
         write(PROJECTS / "spicetify" / d / "user.css", spicetify_user_css(tok))
-    write_port("spicetify", "Copy a theme folder into Spicetify's Themes directory and apply with `spicetify config current_theme`.", "Serendipity for Spicetify", spicetify_files)
+    write(PROJECTS / "spicetify" / "manifest.json", spicetify_manifest(spicetify_entries, "Serendipity"))
+    spicetify_files.extend(["manifest.json", "preview.png"])
+    write_port(
+        "spicetify",
+        """### Spicetify Marketplace
+
+Published for the [Spicetify Marketplace](https://github.com/spicetify/marketplace). Open Marketplace in Spotify and search **Serendipity**.
+
+### Manual installation
+
+Copy a theme folder into Spicetify's Themes directory and apply with `spicetify config current_theme`.""",
+        "Serendipity for Spicetify",
+        spicetify_files,
+    )
 
     # --- Web / dashboards ---
     browser_files = []
@@ -1395,20 +2065,22 @@ repository = "https://github.com/Serendipity-Theme/zed"
     write_port("homepage", "Add CSS to your Homepage config `settings.customCss` array.", "Serendipity for Homepage", homepage_files)
 
     # --- Complex ports ---
-    jetbrains_files = []
-    for vid, tok in all_tokens.items():
-        f = f"Serendipity {vid.title()}.icls"
-        jetbrains_files.append(f)
-        write(PROJECTS / "jetbrains" / f, jetbrains_icls(tok))
-    write(PROJECTS / "jetbrains" / "INSTALL.md", """# Install Serendipity color schemes in JetBrains IDEs
-
-1. Open **Settings → Editor → Color Scheme → Gear icon → Import Scheme…**
-2. Select a `.icls` file from this repository.
-3. Choose **Serendipity Midnight**, **Morning**, or **Sunset**.
-
-These are importable color schemes, not a plugin.
-""")
-    write_port("jetbrains", "See `INSTALL.md` for import steps.", "Serendipity for JetBrains", jetbrains_files + ["INSTALL.md"])
+    jetbrains_files = generate_jetbrains_plugin(
+        PROJECTS / "jetbrains",
+        all_tokens,
+        brand="Serendipity",
+        plugin_id="com.michaelandreuzza.serendipity.jetbrains",
+        plugin_name="Serendipity Theme",
+        github="https://github.com/Serendipity-Theme/jetbrains",
+        root_name="serendipity-jetbrains",
+        scheme_name_fn=jetbrains_scheme_name,
+    )
+    write_port(
+        "jetbrains",
+        "Install from JetBrains Marketplace (see `MARKETPLACE.md`) or import `.icls` files manually (see `INSTALL.md`).",
+        "Serendipity for JetBrains",
+        jetbrains_files,
+    )
 
     figma_files = []
     for vid, tok in all_tokens.items():
