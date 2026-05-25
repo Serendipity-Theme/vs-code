@@ -658,7 +658,7 @@ Bump `version` in `manifest.json`, add the new version to `versions.json`, commi
 
 
 def obsidian_preview_section(*, brand: str, dark_name: str, light_name: str) -> str:
-    if brand == "Sequoia":
+    if brand in ("Sequoia", "Serendipity"):
         return f"""## Preview
 
 | {dark_name} | {light_name} |
